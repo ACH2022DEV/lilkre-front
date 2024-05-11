@@ -1,0 +1,106 @@
+
+.background {
+  background-image: url('../../../assets/images/bg-dar.avif');
+  /* Additional background styling properties can be added here */
+  height: 200%;
+}
+
+ /* .margin{
+   margin-top:5%;
+    margin-bottom: 10%;
+
+}
+.height{
+    height: 60px;
+} */
+
+
+.color{
+    background-color: rgb(246, 127, 9);
+    box-shadow: 0 4px 9px -4px #913b06;
+}
+ .shadow1{
+    box-shadow: 0 4px 9px -4px #025def;
+ }
+ .shadowNoir{
+    box-shadow: 0 4px 9px -4px #0d1117;
+ }
+
+a {
+    color: #18150f;
+    text-decoration: none;
+    outline: none !important;
+
+}
+.sidebutton{
+    border-top: 1px solid #ffffff;}
+
+button[disabled]{
+    cursor: none;
+}
+button[disabled]:hover{
+    background-color: gray;
+    cursor: none;
+}
+h4,h2{
+    text-shadow: 2px 2px 4px #bdb9b9;
+
+}
+.Loginshadow{
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+}
+.eye-icon {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.eye-icon:before {
+  content: "\f06e"; /* Unicode de l'icône de l'œil ouvert */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 18px;
+  color: #000; /* Couleur de l'icône */
+}
+
+.eye-icon.active:before {
+  content: "\f070"; /* Unicode de l'icône de l'œil fermé */
+}
+
+
+
+//pour l'animation
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-from-left {
+  animation: slideInFromLeft 0.5s ease-in-out;
+}
+
+
+.custom-button {
+  border-width: 0;
+  border-style: solid;
+  height: 50px;
+  color: #ffffff;
+  border-color: transparent;
+  background-color: #000;
+  transition: border-color 0.3s;
+}
+
+.custom-button:hover {
+  border-width: 2px;
+  border-color: #000000;
+  color: #000000;
+  background-color: rgba(0, 0, 0, 0);
+}

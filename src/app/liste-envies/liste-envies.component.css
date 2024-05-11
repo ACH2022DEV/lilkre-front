@@ -1,0 +1,32 @@
+
+.color{
+  color:  #f68b1e;
+}
+.btnColor{
+  /*box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);*/
+  box-shadow: 0 4px 9px -4px #913b06;
+  background-color: #f68b1e;
+  height: 40px;
+
+}
+.btnshadow{
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+
+
+}
+.btnshadow:hover{
+  background-color: #e4811c;
+}
+.stylebtn{
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.border1{
+  color: #f68b1e;
+}
+.color-bg{
+  color: #f68b1e;
+  background-color: #feefde;
+  font-family: Roboto,Arial,Helvetica,sans-serif;
+
+}

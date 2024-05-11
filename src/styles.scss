@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import"~@angular/material/prebuilt-themes/indigo-pink.css";
+input.star:checked ~ label.star:before {
+    color: rgb(255, 222, 10) !important;
+    margin: 0px;
+    font-size: 20pt;
+    cursor: pointer;
+
+  }
+  input.star ~ label.star:before {
+    color: rgb(251, 210, 2) !important;
+    margin: 0px;
+    font-size: 20pt;
+    cursor: pointer;
+  }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

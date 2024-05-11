@@ -1,0 +1,42 @@
+.size{
+    font-size:  65px;
+}
+/* .form-control{
+background: rgba(248, 248, 248, 0.8);
+
+} */
+button[disabled]{
+    cursor: none;
+}
+button[disabled]:hover{
+    background-color: gray;
+    cursor: none;
+}
+.style{
+    //border: none;
+    background: #f88200;
+    //border-radius: 9px;
+    //font-family: 'robotobold';
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #fff;
+    text-align: center;
+    margin-top: 11px;
+    //width: 106px;
+    height: 45px;
+    float: right;
+}
+ul.social_icon {
+    display: flex;
+  
+    flex-wrap: wrap;
+}
+ul, li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}

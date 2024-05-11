@@ -1,0 +1,15 @@
+<div class="" >
+  <div class="modal-dialog modal-lg ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel">Image de produit</h5>
+        <button class="btn border border-0 " mat-icon-button mat-dialog-close aria-label="Close">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img [src]="convertBase64ToImages(data.imageUrl)" class="img-fluid" alt="Image en grand">
+      </div>
+    </div>
+  </div>
+</div>

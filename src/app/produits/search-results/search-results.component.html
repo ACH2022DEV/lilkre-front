@@ -1,0 +1,253 @@
+
+
+
+
+
+
+<div class="container-fluid  mt-5 mb-5">
+  <div class="row ">
+    <div class="col-md-3 col-lg-3 d-none d-sm-none d-md-block d-lg-block h-100 shadow-sm  ms-5   bg-white rounded-1 ">
+      <div class=" ">
+      <h3 class="text-dark mt-1 ms-4">Nos Catégories</h3>
+     <div class="ms-4 sidebutton  ">
+       <a href="" [routerLink]="['/searchProduct/','Escabeau']"><p class="">Acem Escabeau </p></a>
+      <a href="" [routerLink]="['/searchProduct/','Jeux']"><p>Jeux de Tournevis</p></a>
+      <a href="" [routerLink]="['/searchProduct/','disque']"><p>Disques</p></a>
+      <a href="" [routerLink]="['/searchProduct/','Cadenas']"><p>Cadnas</p></a>
+      <a href="" [routerLink]="['/searchProduct/','outils']"><p>Outils Plastique</p></a>
+      <a href="" [routerLink]="['/searchProduct/','Clés']"><p>Des Clés</p></a>
+      <a href="" [routerLink]="['/searchProduct/','Scie']"> <p>Scie</p></a>
+      <a href="" [routerLink]="['/searchProduct/','brosse']"> <p class="">Des brosses </p></a>
+    </div>
+    <h3 class="text-dark ms-4 mt-2">Marque</h3>
+   <div class="ms-4 sidebutton mt-2 ">
+     <div class="form-check" [routerLink]="['/searchProduct/','Acem']">
+      <input class="form-check-input border-2  border-secondary " type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label fw-semibold" for="flexCheckDefault">
+        Acem
+      </label>
+    </div>
+    <div class="form-check mt-2 mb-2" [routerLink]="['/searchProduct/','TOTAL']">
+      <input class="form-check-input border-2  border-secondary" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label fw-semibold" for="flexCheckDefault">
+        Total
+      </label>
+    </div>
+  </div>
+  <!------------>
+
+  <div class="  mt-3 ms-4">
+    <h4 class="text-dark  ">ÉVALUATION CLIENTS</h4>
+    <div class="stars d-flex  "size="25">
+      <div class="flex" [routerLink]="['/searchProduct/','outils']">
+        <input  type="radio" name="radio" id="radio1" />
+        <label for="radio1"></label>
+      </div>
+      <a href="" [routerLink]="['/searchProduct/','outils']" >
+    <div class="d-flex" > <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+     </div>  </a></div>
+    <div class="stars d-flex  ms-0  ">
+      <div class="flex">
+        <input [routerLink]="['/searchProduct/','Jeux']" type="radio" name="radio" id="radio3" />
+        <label for="radio3"></label>
+      </div><a  [routerLink]="['/searchProduct/','Jeux']">
+    <div class="d-flex"> <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star color"></span></div>  </a> </div>
+    <div class="stars d-flex  ms-0 "><div class="flex">
+      <input [routerLink]="['/avisSearch/', 3]" type="radio" name="radio" id="radio1" />
+      <label for="radio1"></label>
+    </div><a >
+      <div class="d-flex">  <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>        </div>   </a></div>
+    <div class="stars d-flex  ms-0 "><div class="flex">
+      <input [routerLink]="['/avisSearch/', 2]" type="radio" name="radio" id="radio1" />
+      <label for="radio1"></label>
+    </div><a >
+      <div class="d-flex"> <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>
+                </div></a></div>
+    <div class="stars d-flex  ms-0 "><div class="flex">
+      <input [routerLink]="['/avisSearch/', 1]" type="radio" name="radio" id="radio1" />
+      <label for="radio1"></label>
+    </div>
+    <a >
+      <div class="d-flex"> <span class="fa fa-star checked"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>
+               </div>  </a></div>
+  </div>
+ <!--  <div class=" margin mt-3 mx-2">
+    <h4 class="text-dark">Consulter ÉVALUATION CLIENTS</h4>
+    <div class="stars d-flex  "size="25">
+      <div class="flex">
+        <input [routerLink]="['/liste-produits/',5]" type="radio" name="radio" id="radio1" />
+        <label for="radio1"></label>
+      </div>
+      <a href="" >
+    <div class="d-flex"> <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+     </div>  </a></div>
+    <div class="stars d-flex  ms-0  ">
+      <div class="flex">
+        <input [routerLink]="['/avisSearch/', 4]" type="radio" name="radio" id="radio3" />
+        <label for="radio3"></label>
+      </div><a >
+    <div class="d-flex"> <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star color"></span></div>  </a> </div>
+    <div class="stars d-flex  ms-0 "><div class="flex">
+      <input [routerLink]="['/avisSearch/', 3]" type="radio" name="radio" id="radio1" />
+      <label for="radio1"></label>
+    </div><a >
+      <div class="d-flex">  <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>        </div>   </a></div>
+    <div class="stars d-flex  ms-0 "><div class="flex">
+      <input [routerLink]="['/avisSearch/', 2]" type="radio" name="radio" id="radio1" />
+      <label for="radio1"></label>
+    </div><a >
+      <div class="d-flex"> <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>
+                </div></a></div>
+    <div class="stars d-flex  ms-0 "><div class="flex">
+      <input [routerLink]="['/avisSearch/', 1]" type="radio" name="radio" id="radio1" />
+      <label for="radio1"></label>
+    </div>
+    <a >
+      <div class="d-flex"> <span class="fa fa-star checked"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>
+               </div>  </a></div>
+  </div> -->
+  <h5 class="text-dark">Search By Prix<span class=" me-2 p-2 fs-6">(TND)</span> <a href="" [routerLink]="['/searchProduct/',this.quantity1]"> <span class="fs-5 ms-5 color-bg bg-white">OK</span></a></h5>
+  <div class="d-flex  mx-3 mb-5 mt-3">
+    <a type="button "  class="btn rounded-1 btnColor1"(click)="incremente()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-plus-lg text-white" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+    </svg></a>
+   <input type="number"  [(ngModel)]="this.quantity1" style="width: 80px;" class="form-control border-0 mx-1 text-center   ">
+           <!-- <p class="p-2 mx-3">{{this.quantity1}}<span class=" mx-2">TND</span></p>  -->
+      <!-- <h4 class="mx-3 " name="aa">{{this.quantity1}}</h4> -->
+    <a type="button " class="btn rounded-1 btnColor1 "(click)="decremente()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-dash-lg text-white" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"/>
+    </svg></a>
+  </div>
+
+
+  <!----------->
+      </div>
+
+      </div>
+
+
+    <div class=" col-md-7 mt-0   mx-auto col-12 col-lg-8 col-sm-12  shadow-sm  row animate   p-1 bg-white rounded-1" >
+     <div> <h3 class="p-2 ">Les Produits</h3>
+      <p class="sidebutton p-2 sidebar "> {{lenght}} résultats</p></div>
+      <div class="col-md-6 col-lg-3 col-6 col-sm-4  h-100  my-2" *ngFor="let prod of results; index as i ">
+        <div class="card     border border-0 ">
+          <!-- <a [routerLink]="['/details/', prod.codeArticle]" href=""> -->
+          <div class="position-relative  ">
+
+            <a [routerLink]="['/details/', prod.codeArticle]" href="">
+          <img [src]='convertBase64ToImage(prod.images)' class="card-img-top rounded-4 p-3 mt-1 " alt="..."> </a>
+          <div class=" ">  <a [routerLink]="['/details/', prod.codeArticle]" href="">
+            <p class="card-text text-start ms-3  text-truncate ">{{prod.description}}</p>
+          <p class=" text-danger text-start ms-3">{{prod.prix }} TND</p>
+          <p class=" ms-3"><span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span></p>
+          <h6 class=" ms-3 d-none d-sm-block">Reférence:{{prod.codeArticle}}</h6>
+
+
+          <p  class="text-decoration-line-through  text-start ms-3  ">{{(prod.prix*(1+prod.remise/100)).toFixed(2)}} TND <span class="badge ms-3  color-bg" >-{{prod.remise}}%</span></p>
+          <!-- <p class="text-start ms-3">{{prod.paysOrigine}}</p> -->
+        </a>
+
+            <form #f="ngForm" (ngSubmit)=" ajouterAuPanier(f)">
+              <div class="form-group">
+                <input class="form-control my-1 float-Start w-30 " type="hidden" [(ngModel)]="this.key" ngModel
+                  name="idPersonne">
+              </div>
+              <div class="form-group">
+                <input class="form-control my-1 float-Start w-30 " type="hidden" [(ngModel)]="prod.codeArticle" ngModel
+                  name="codeArticle">
+              </div>
+              <div class="form-group">
+                <input class="form-control my-1 float-Start w-30  " type="hidden" [(ngModel)]="this.quantity" ngModel
+                  name="quantity">
+              </div>
+              <div class="d-flex justify-content-center mb-2">
+                <button  type="submit" class="btn   text-white mx-1 btnColor w-100  rounded-2"  >
+                  <p class="fs-6 d-none d-sm-none d-md-none d-lg-none d-xl-block" >Ajouter au panier<i class="bi bi-cart4 "></i></p>
+                  <p class="fs-6 d-sm-block d-md-block d-lg-block d-xl-none  d-block" ><i class="bi bi-cart4 "></i></p>
+                </button></div>
+
+
+
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+      <!-- <div *ngIf="ProductNotFound"  >
+        <p>this Product Not Exist</p>
+
+      </div> -->
+      <!-- <div class="btn-group">
+      <ul class=" nav nav-pills pointer " *ngFor="let p of total ; let i=index">
+                            <li class="nav-item p-1">
+                              <a  class="nav-link" (click)="setPage(i,$event)"[ngClass]="{'active':i==page}"  >{{i}}</a>
+                            </li>
+
+                  </ul></div> -->
+                  <div class="d-flex justify-content-center mt-5">  <nav aria-label="Page navigation example " >
+                    <ul class="pagination pointer " >
+
+
+                        <li class="page-item" *ngFor="let p of total ; let i=index">
+                        <a  class="page-link rounded-1 border-0 shadow-sm " (click)="setPage(i,$event)"[ngClass]="{'active':i==page}">{{i}}</a>
+                       </li>
+
+                    </ul>
+                  </nav></div>
+       </div>
+
+
+
+
+    </div>
+
+
+

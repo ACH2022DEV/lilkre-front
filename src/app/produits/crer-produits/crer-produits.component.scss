@@ -1,0 +1,65 @@
+button[disabled]{
+    cursor: none;
+}
+button[disabled]:hover{
+    background-color: gray;
+    cursor: none;
+}
+
+.btnColor{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    background-color: #f68b1e;
+    height: 40px;
+
+}
+
+
+.form-control:focus {
+  border-color: #342c70 !important;
+  box-shadow: none;
+  border-width: 2px;
+}
+
+.form-control:focus:not(:focus-visible) {
+  border-color: #ced4da !important;
+  box-shadow: none !important;
+}
+.form-control {
+  border-color: #000000 !important;
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+}
+/* Style pour un toast rouge */
+::ng-deep .mat-snack-bar-container.error {
+  background-color: #b00c00; /* Rouge */
+  color: white; /* Texte en blanc */
+}
+
+/* Style pour un toast vert */
+::ng-deep .mat-snack-bar-container.success {
+  background-color: #005403; /* Vert */
+  color: white; /* Texte en blanc */
+}
+.mat-snack-bar-container.error .mat-snack-bar-action {
+  color: rgb(0, 0, 0); /* Couleur du texte pour le bouton "Fermer" */
+}
+
+
+.formshadow{
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+}
+
+
+.delete-btn {
+  visibility: hidden;
+}
+
+.img:hover .delete-btn{
+  visibility: visible;
+}
+.border-red {
+  border-color: rgb(207, 0, 0) !important;
+  border-width: 2px;
+}
+.text-danger {
+  color: #b70012 !important;
+}

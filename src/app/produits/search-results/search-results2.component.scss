@@ -1,0 +1,260 @@
+.animate :hover{
+   
+    button{
+        visibility:visible;
+    }
+  
+
+
+}
+p{
+    margin: 0;
+    font-size: 17px;
+}
+
+.margin{
+  width: 50px;
+}
+
+
+p a {
+    font-size: .875rem;
+    font-family: Roboto,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif;
+}
+
+a.active{
+  background-color: rgb(255, 255, 255);
+  color: rgb(5, 4, 4);
+}
+.page-link{
+  text-decoration: none;
+  color: rgb(253, 251, 251);
+  background-color: #f68b1e;
+  margin: 3px;
+ cursor: pointer;
+}
+
+/* button{
+visibility:hidden;
+font-family: Roboto,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif;
+font-size: .875rem;
+} */
+.sidebutton {
+  a{
+    color: #000;
+   
+  }
+  a:hover{
+color: #f58a07;
+
+
+  }
+}
+.col-12{
+  margin: auto;
+  
+}
+/*  .col-lg-3{
+  button{
+    visibility:hidden
+  }
+} 
+.col-6{
+  button{
+    visibility:visible;
+  }
+} */
+
+a{
+text-decoration: none;
+color: #000;
+}
+.animate{
+box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+
+}
+.col-md-3{
+  max-width: 300px;
+}
+
+.btnColor1{
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  background-color: #f68b1e;
+  height: 39px;
+  
+}
+.card:hover{
+
+//box-shadow:  0 1rem 2rem rgba(black, .175);
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+transition: 0.5 ease-in-out;
+  transform: scale(1.05);
+}
+input[type="radio"]:checked {
+  background-color: #fc8c03;
+}
+.checked {
+  color: orange; 
+  margin: 4px;
+  
+}
+
+
+
+a,h4{
+  color: #898989;
+  font-size: 16px;
+  cursor: pointer;
+}
+.form-check-input:hover{
+  box-shadow: 8 4px 8px 0 rgba(240, 128, 7, 0.2);
+}
+.form-check-input{
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+}
+.form-check-input:checked{
+  background-color: #f68b1e;
+  width: 20px;
+  height: 20px;
+  
+}
+.color{
+color:rgb(224, 222, 222);
+margin: 4px;
+
+}
+input[type="radio"] {
+  /* remove standard background appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* create custom radiobutton appearance */
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  padding: 3px;
+  /* background-color only for content */
+  background-clip: content-box;
+  border: 3px solid #bbbbbb;
+
+  border-radius: 50%;
+}
+.checked {
+    color: orange; 
+    margin: 4px;
+    
+  }
+  .color{
+    color:rgb(220, 216, 216);
+  margin: 4px;
+  
+  }
+.sidebutton{
+    border-bottom: 1px solid #dddddd;}
+.sidebar{
+border-top: 1px solid #e5e3e3;}
+
+
+.btnColor{
+  box-shadow: 0 4px 9px -4px #913b06;
+  background-color: #f68b1e;
+height: 40px;
+
+
+}
+
+.color-bg{
+color: #f68b1e;
+background-color: #feefde;
+font-family: Roboto,Arial,Helvetica,sans-serif;
+
+}
+/*******************************************/
+
+   /*  .sidebar{
+      border-top: 2px solid #dddddd;}
+      .gray{
+          background-color: rgb(222, 229, 236);
+      }
+    
+
+    .card-wrapper{
+      display: flex;
+    }
+    .card{
+      margin: 0.5em;
+      height: 400px;
+    }
+  .image-wrapper img{
+      max-width: 100%;
+      max-height: 100%;
+  }
+
+
+  .slider-wrap{
+    position: relative;
+ height:  490px;
+  max-height: 85%;
+  overflow: hidden;
+ border-radius: 10px;
+
+  }
+  .slider-main{
+    position: absolute;
+    width: 200%;
+   
+  
+  }
+  .item{
+    display: inline-block;
+   width: 100ps;
+   border-radius: 10px;
+   
+    position: relative;
+  
+   
+   margin: 102px;
+    
+  }
+ 
+  .text{
+position: absolute;
+background-color: white;
+border-radius: 5px;
+
+width: 200px;
+height: 300px;
+  }
+  
+  .visibility1{
+visibility:visible;
+  }
+  .container-fluid{
+    max-width: 94%;
+
+  
+  }
+  .carousel-control-prev{
+    margin-left: 0;
+  }
+  .carousel-control-next{
+    width: -55px;
+   
+  }
+  */
+
+  @media (min-width: 992px) { 
+    button{
+      visibility:hidden;
+      font-family: Roboto,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif;
+      font-size: .875rem;
+      }
+   }
+   @media (max-width: 370px) {
+    .checked{
+      //margin: 1px;
+      width: 8px;
+    }
+    }

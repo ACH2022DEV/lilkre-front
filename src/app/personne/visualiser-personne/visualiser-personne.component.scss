@@ -1,0 +1,52 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+.style{
+    float: left;
+}
+
+
+ 
+
+
+
+/* .cover-body {
+    position: absolute;
+    
+  
+   top: 230px;
+    left: 20px;
+    z-index: 2;
+    width: 100%;
+} */
+ /* .nomPrenom{
+    font-size: 25px;
+    font-weight: 600;
+   margin-left: 275px;
+   
+} */
+  @media (min-width: 280px) { 
+.cover-body{
+  
+  z-index: 2;
+   margin-top: 300px;
+    position: absolute;
+} 
+
+
+}
+.cover-body {
+    //position: absolute;
+    
+  
+  // top: 200px;
+    left: 20px;
+    z-index: 2;
+    width: 100%;
+    position: absolute;
+}
+@media (min-width: 2200) {
+    .apropos{
+    margin-top: 400px;
+} }

@@ -1,0 +1,39 @@
+.bg {
+    background-color: #f68b1e;
+
+}
+.se_fonr1 {
+    justify-content: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+}
+ul.social_icon {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.text-facebook{
+  color: #005fc6 !important;
+}
+.text-purple {
+  color: #006ee3 !important;
+}
+.shadow{
+    box-shadow:2rem 2rem rgba(black, 0.15);
+}
+.icon:hover{
+    transition: 0.5 ease-in-out;
+    transform: scale(1.05);}
+ul, li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: rgb(229, 163, 30);
+}

@@ -1,0 +1,57 @@
+
+
+
+
+.background {
+  background-image: url('../../../assets/images/bg-dar.avif');
+  height: 100%;
+  /* Additional background styling properties can be added here */
+}
+
+.color{
+    background-color: rgb(246, 127, 9);
+}
+.registershadow{
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+}
+.border-danger {
+  border-color: rgb(240, 0, 0) !important;
+  border-width: 2px; /* Définit la couleur de la bordure en rouge */
+}
+button:hover {
+    background-color: #f2c119;
+}
+.sidebutton{
+    border-top: 1px solid #999595;}
+
+//@at-root
+
+
+button[disabled]{
+    cursor: none;
+}
+button[disabled]:hover{
+    background-color: gray;
+    cursor: none;
+}
+.Loginshadow{
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+}
+.eye-icon {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.eye-icon:before {
+  content: "\f06e"; /* Unicode de l'icône de l'œil ouvert */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 18px;
+  color: #000; /* Couleur de l'icône */
+}
+
+.eye-icon.active:before {
+  content: "\f070"; /* Unicode de l'icône de l'œil fermé */
+}

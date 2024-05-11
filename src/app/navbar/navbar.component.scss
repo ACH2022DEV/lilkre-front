@@ -1,0 +1,147 @@
+
+.search{
+    border: 2px solid #131111;
+    border-radius: 25px;
+   /*  padding: 10px;
+    width: 100%; */
+   // box-sizing: border-box;
+
+}
+.nav-item{
+  text-shadow: 1px 1px 1px #bdb9b9;
+}
+.navbar-expand-lg .navbar-nav .nav-item .nav-link.active-link{
+   /*  color: rgb(255, 255, 255);
+    background-color: #060606;
+    font-weight: bold;
+    border-radius: 2px; */
+    text-shadow: 1px 1px 1px #bdb9b9;
+    color:rgb(7, 6, 7);
+    //font-weight: 500;
+    font-weight: bold;
+    text-transform:capitalize;
+   // text-shadow: #181717 2px;
+    border-bottom: 2px solid rgb(15, 12, 14);
+    border-radius: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  //  transition: 1 ease-in-out;
+    transform: scale(1.08);
+
+  }
+/* .nav-item{
+    text-shadow: 2px 2px 4px #bdb9b9;
+} */
+.btnColor{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    background-color: #f68b1e;
+    height: 40px;
+
+}
+.hover2:hover{
+    background-color: #e9e8e8;
+    border-radius: 5px;
+   width: 95%;
+    margin: auto;
+}
+.hover:hover{
+    color: #0d0b0b;
+    background-color: #e9e9e9;
+    border-radius: 6px;
+
+}
+.left{
+    border-right: 2px solid #dddddd;
+}
+/* .nav-item {
+    .hover{
+        border-right: 1px solid #797777;
+
+    }
+} */
+/* .hover:hover{
+    background-size: 100% 2px;
+    color: #de1b76;
+
+}
+.nav-link::after{
+    background-image: linear-gradient(180deg,rgba(222,27,118,.9),rgba(222,27,118,.9));
+    background-position: 0 2.625rem;
+    background-repeat: no-repeat;
+    background-size: 0 2px;
+    color: #de1b76;
+    font-weight: 500;
+    border-bottom: #171514 5px;
+} */
+.shadow1{
+    box-shadow: 0 4px 9px -4px #025def;
+ }
+ .shadowNoir{
+    box-shadow: 0 4px 9px -4px #0d1117;
+ }
+
+.sidebar{
+    border-top: 2px solid #dddddd;}
+    .gray{
+        background-color: rgb(222, 229, 236);
+    }
+/* :hover {
+    background-color: #f2c119;
+}   */
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+.form-control::placeholder  {
+    font-family: FontAwesome;
+
+  }
+  .form-control{
+    box-sizing: border-box;
+    //width: 400px;
+    height: 41px;
+  }
+/* .btnColor{
+    background-color: rgb(206, 201, 201);
+} */
+/* .margintop{
+    margin-top: 50px;
+} */
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
+
+.position{
+    float: right;
+    margin-top: 0px;
+
+}
+.height{
+    height: 130px;
+}
+  @media (max-width: 991.98px) {
+
+.visible{
+    /* float: right;
+
+    margin-left: 250px; */
+    visibility: hidden;
+}
+.panier{
+    visibility: hidden;
+}
+ }
+/*  @media (max-width: 430px) {
+button{
+    width: 50px;
+    border-radius: 50%;
+    h6{
+        visibility: hidden;
+    }
+}
+  } */
+  .custom-button {
+    border-width: 2px; /* Épaisseur de la bordure */
+    border-style: solid; /* Style de la bordure (ici solide) */
+    border-color: #343a40; /* Couleur de la bordure */
+  }

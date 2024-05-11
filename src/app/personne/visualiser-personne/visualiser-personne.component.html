@@ -1,0 +1,165 @@
+<!-- 
+
+
+ <div class="container-fluid  mb-5">
+  <div class="row  ">
+          <div class=" col-12   col-md-12 mx-auto col-sm-12">
+                      <figure class=" w-100 ">
+                        <img [src]='convertBase64ToImage(personne.images)' class="w-100  shadow"   height="400px"  alt="profile cover">
+                        <div class="container-fluid mb-3 cover-body w-75 h-50   col-7  col-sm-6 col-md-4 col-lg-3">
+                          <img class="  rounded-circle img-thumbnail p-1 "  [src]='convertBase64ToImage(personne.images)' alt="profile">
+                           <span  class=" col-12 fw-bold  col-md-12 mb-2    ">{{personne.nom}} {{personne.prenom}}</span> 
+                        
+                
+                  </div> </figure>
+          </div>
+                        
+
+                  
+              
+                  <div class="container-fluid mt-5">
+                    <div class="row">
+                      <div class="col-md-5 col-12 col-md-5 col-lg-4 mx-auto mt-5 shadow-sm bg-white h-100 rounded-2">
+                        <h3 class="fw-bold text-center mt-2">A propos </h3>
+                        <div class="d-flex"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                          <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                        </svg><p class="fw-bold ms-2"> Email:</p> <span class="card-text ">{{personne.email}}</span></div>
+                        <div class="d-flex"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                          <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                          <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        </svg><p class="fw-bold mx-2">  Adress:</p> <span class="card-text ">{{personne.adress}}</span></div>
+                        <div class="d-flex"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                          <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                        </svg><p class="fw-bold ms-2"> Numero de téléphone:</p> <span class="card-text ">{{personne.tel}}</span></div>
+
+
+                      </div>
+                      <div class=" col-md-6 col-lg-5 col-12 mx-auto  mt-5 ">
+                        <div class="p-4 shadow-sm bg-white rounded-2">
+                          <h5 class="card-title">Activité:</h5>
+                          <p class="card-text"><h2>{{this.avislenght}} <span class="text-muted fs-4">Commentaires</span> </h2>
+                        </div>
+                        <div class="  mt-2 p-3 shadow bg-white rounded-1"  *ngFor="let avis of personne.avis; index as i">
+                          <div>
+       
+                            <a [routerLink]="['/visualiser-personne/',avis.personne.id]"><h5 class="p-1"><img   [src]='convertBase64ToImage(avis.personne.images)' class="rounded-circle" width="50"
+                              height="50"> {{avis.personne.nom}} {{avis.personne.prenom}}</h5></a>
+                            <div class="stars d-flex justify-content-start ">
+                              <ngx-star-rating [(ngModel)]=avis.etoile [id]="'rating1'+i" [disabled]="true"></ngx-star-rating>
+                            </div>
+                    
+                            <p>Commenté le {{avis.dateAvis | date:'fullDate'}}</p>
+                            <p class="card-text card border-0">Message: {{avis.message}}.</p>
+                    
+                          </div>
+                        </div>
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
+
+ <!---essai-->
+ 
+
+ <!-- <div class="row col-md-3"> <button routerLink="/list-personne" class="btn bg-white style mt-5 ms-5" ><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+</svg></button></div> -->
+ 
+  
+          <div class=" container-fluid   col-12   col-md-12 mx-auto col-sm-12">
+            <div class="row mb-5">
+          <img [src]='convertBase64ToImage(personne.images)' class="w-100  "   height="400px"  alt="profile cover">
+                       <div class=" cover-body w-75  ">
+                          <img class="  col-6  col-sm-4 col-md-3  col-lg-2 rounded-circle img-thumbnail p-1 "  [src]='convertBase64ToImage(personne.images)' alt="profile">
+                       <div class="col-6">  <h5  class=" col-12 fw-bold  col-md-12 d-flex     ">{{personne.nom}} {{personne.prenom}}</h5></div>   
+                        
+                
+                  
+          </div> 
+          </div>   </div>
+                        
+                      <!-- <span ><p class="mt-4  nomPrenom  ">{{personne.nom}} {{personne.prenom}}</p></span>  -->
+
+                 
+              
+                  <div class="container-fluid my-5 apropos">
+                    <div class="row">
+                      <div class="col-md-5 col-12 col-md-5 col-lg-4 mx-auto mt-5 shadow-sm bg-white h-100 rounded-2">
+                        <h3 class="fw-bold text-center mt-2">A propos </h3>
+                        <div class="d-flex"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                          <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                        </svg><p class="fw-bold ms-2"> Email:</p> <span class="card-text ">{{personne.email}}</span></div>
+                        <div class="d-flex"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                          <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                          <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        </svg><p class="fw-bold mx-2">  Adress:</p> <span class="card-text ">{{personne.adress}}</span></div>
+                        <div class="d-flex"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                          <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                        </svg><p class="fw-bold ms-2"> Numero de téléphone:</p> <span class="card-text ">{{personne.tel}}</span></div>
+
+
+                      </div>
+                      <div class=" col-md-6 col-lg-5 col-12 mx-auto  mt-5 ">
+                        <div class="p-4 shadow-sm bg-white rounded-2">
+                          <h5 class="card-title">Activité:</h5>
+                          <p class="card-text"><h2>{{this.avislenght}} <span class="text-muted fs-4">Commentaires</span> </h2>
+                        </div>
+                        <div class="  mt-2 p-3 shadow bg-white rounded-1"  *ngFor="let avis of personne.avis; index as i">
+                          <div>
+       
+                            <a [routerLink]="['/visualiser-personne/',avis.personne.id]"><h5 class="p-1"><img   [src]='convertBase64ToImage(avis.personne.images)' class="rounded-circle" width="50"
+                              height="50"> {{avis.personne.nom}} {{avis.personne.prenom}}</h5></a>
+                            <div class="stars d-flex justify-content-start ">
+                              <ngx-star-rating [(ngModel)]=avis.etoile [id]="'rating1'+i" [disabled]="true"></ngx-star-rating>
+                            </div>
+                    
+                            <p>Commenté le {{avis.dateAvis | date:'fullDate'}}</p>
+                            <p class="card-text card border-0">Message: {{avis.message}}.</p>
+                    
+                          </div>
+                        </div>
+                        </div>
+                      
+                      </div>
+                    </div>
+               
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

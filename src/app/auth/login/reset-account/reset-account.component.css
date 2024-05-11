@@ -1,0 +1,22 @@
+.mat-dialog-content
+{
+  padding: 0;
+}
+.eye-icon {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.eye-icon:before {
+  content: "\f06e"; /* Unicode de l'icône de l'œil ouvert */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 18px;
+  color: #000; /* Couleur de l'icône */
+}
+
+.eye-icon.active:before {
+  content: "\f070"; /* Unicode de l'icône de l'œil fermé */
+}

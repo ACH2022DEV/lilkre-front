@@ -1,0 +1,71 @@
+<!-- <div class="container  mt-5">
+    <h6 class="text-center fs-1 p-5 fst-italic text-secondary">Votre Contact</h6>
+<div class="con mb-3 mt-5 mb-5 offset-md-2 bg-light " *ngFor="let contact of contacts" >
+    <div class="row g-5 ">
+      <div class="col-md-4  ">
+        
+        <img [src]='convertBase64ToImage(contact.personne.images)' class="img-fluid rounded-start rounded-pill" width="250px" alt="...">
+        <p class="card-text text-center fs-1 fst-italic">{{contact.personne.nom}} {{contact.personne.prenom}}</p>
+    </div>
+      <div class="col-md-8  ">
+        <div class="card-body ">
+          <p class=" text-start fs-0"><strong class="card-title fs-1">Sujet</strong>  {{contact.sujet}}</p>
+          <p class="card-text">messages: {{contact.message}}</p>
+          <p class="card-text">Vers destinateur: {{contact.destinateur}}</p>
+          <p class="card-text"> DATE: {{contact.dateContact}}</p>
+          <a href="#" class="text-end"><p>Vu</p></a>
+          
+
+        </div>
+      </div>
+    </div>
+  </div></div> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 col-lg-4    col-3 col-sm-2  rounded-2 mt-2 mb-5 shadow-sm  bg-body   h-100 " > 
+      <p class="fw-bold text-center mt-2 fs-4 d-none d-sm-none d-md-block d-lg-block ">Tous les Profils</p>
+      <div class="d-flex rounded-pill   my-2  hover"  [routerLink]="['/visualiser-personne', pers.id]"  *ngFor="let pers of personnes" >
+      
+          <div class=" p-1 " ><img [src]='convertBase64ToImage(pers.images)' class="  shadow rounded-circle"   width="50px" ></div>
+        <p class="text-center mt-3 mx-3 fw-semibold fs-6 d-none d-sm-none d-md-block d-lg-block   "   >{{pers.nom}} {{pers.prenom}}</p> 
+     
+     
+      
+      </div>
+    </div>
+   
+
+    <div class="col-md-7 col-9 col-sm-10 col-lg-8  rounded-1 mt-2 mb-5  h-100    "> 
+    
+      <div class="  card rounded-2 shadow-sm bg-white mb-2" *ngFor="let contact of contacts">
+        <div class="row h-100  ">
+          <div class=" col-md-4 col-sm-10  col-9   ">
+            <img [src]='convertBase64ToImage(contact.personne.images)' class=" p-2  w-100 rounded-circle  " alt="...">
+        </div>
+          <div class="col-md-8 col-sm-10  ">
+            <div class="card-body ">
+               <p class="  fs-3 fw-semibold">{{contact.personne.nom}} {{contact.personne.prenom}}</p>
+              <p class=" text-start   border-0 m-0" ><span class="fw-bold"></span>  {{contact.sujet}}</p>
+              <p class="card-text card border-0 m-0" ><span class="fw-semibold " > </span>  {{contact.message}}  </p>
+              <!-- <p class="card-text m-0"> <strong>Vers destinateur:</strong> {{contact.destinateur}}</p> -->
+              <p class="card-text m-0"><span class="fw-semibold"> Commenté le</span> {{contact.dateContact |date:'medium'}}</p>
+             
+              
+    
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ <!--    <div class="col-md-4 rounded-1 shadow-sm mt-2 mb-5  bg-white">     
+        <p class="fw-bold text-center mt-2 fs-4 ">Les Commandes</p>
+        <div class="shadow bg-white" *ngFor="let com of commandes">
+         {{com.personnes.id}}
+        </div>
+       
+    </div> -->
+  </div>
+</div>
+
+
+  

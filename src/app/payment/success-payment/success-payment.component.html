@@ -1,0 +1,26 @@
+
+<div class="container-fluid d-flex justify-content-center justify-items-center margin" >
+  <div class="row">
+    <div class="col-md-12" *ngIf="!successPayment">
+      <div  class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+<div class="col-md-12" *ngIf="successPayment">
+  <div class="d-flex justify-content-center">
+    <img src="../../../../assets/images/img/succesfullPayment.png" class="mb-2"  height="250px">
+
+</div>
+<div class="d-block ">
+<h1 class="text-center">Paiement Réussi !</h1>
+  <p class="text-center">Votre paiement a été traité avec succès.</p>
+  <div class="d-flex justify-content-center">
+     <button (click)="goBack()"  class="w-75 btn border-dark rounded-pill styleButton">Retourner à l'accueil</button></div>
+ </div>
+
+  </div>
+
+</div>
+
+
+

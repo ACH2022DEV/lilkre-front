@@ -1,0 +1,134 @@
+<div class="modal-header px-0">
+  <h5 class="modal-title text-dark mt-0 "*ngIf="!resetpage && !codeEnvoyer && !codeVerifier" id="imageModalLabel">Recherchez votre compte </h5>
+  <h5 class="modal-title text-dark mt-0 "*ngIf="resetpage && !codeEnvoyer && !codeVerifier" id="imageModalLabel">Où devons‑nous envoyer un code de confirmation ?</h5>
+  <h5 class="modal-title text-dark mt-0 "*ngIf="codeEnvoyer && !codeVerifier" id="imageModalLabel">Nous vous avons envoyé un code</h5>
+  <h5 class="modal-title text-dark mt-0 "*ngIf="codeVerifier" id="imageModalLabel">Choisissez un nouveau mot de passe</h5>
+  <button class="btn border border-0 " mat-icon-button mat-dialog-close aria-label="Close">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<mat-dialog-content class="p-0" >
+<div class="rounded-3 "style="width: 600px;height: 300px;"  >
+  <div class="modal-dialog modal-lg ">
+    <div class="modal-content border-0" id="imageModal"  *ngIf="!resetpage && !codeEnvoyer && !codeVerifier">
+      <div class="modal-body py-0 ">
+        <!-- <p class="  test-center d-flex">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+          </svg> <span class="text-warning mx-2 test-center d-block" >Entrez l'adresse email, le numéro de téléphone ou le nom d'utilisateur associé à votre compte pour modifier votre mot de passe.</span></p> -->
+          <div class="alert alert-warning d-flex" role="alert">
+          <div><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+            </svg> </div>  <span class="text-dark mx-2 test-center d-block" >Entrez l'adresse email, le numéro de téléphone ou le nom d'utilisateur associé à votre compte pour modifier votre mot de passe.</span>
+          </div>
+        <form #verifierCompte="ngForm" (ngSubmit)="VerifierCompte(verifierCompte)">
+          <div class="form-floating mb-1">
+            <input [ngClass]="compteExiste ? 'border-dark' : 'border-danger'" type="text" class="form-control border " id="floatingInput"
+            placeholder="Code de vérification" name="identifiant" ngModel required >
+            <label for="floatingInput" class="text-dark">Adresse email, numéro de téléphone ou nom d'utilisateur</label>
+          </div>
+          <p *ngIf="!compteExiste" class="text-danger">Désolé, nous n'avons pas pu trouver votre compte. </p>
+
+          <!-- Boutons dans le formulaire -->
+          <div class="mt-2">
+            <button type="submit" style="height:50px" class="btn btn-dark w-100 bg-dark rounded-1" [disabled]="verifierCompte.invalid">Confirmer</button>
+            <button type="button" style="height:50px" (click)="fermerDialog()" class="mt-1 btn btn-white w-100 bg-white rounded-1 border-dark" >Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--partie de reset-->
+    <div class="modal-content border-0" id="imageModal" *ngIf="resetpage && !codeEnvoyer && !codeVerifier">
+
+      <div class="modal-body py-0 ">
+
+          <div class="alert alert-warning d-flex" role="alert">
+          <div><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+            </svg></div>   <span class="text-dark mx-2 test-center d-block" > Pour que vous puissiez modifier votre mot de passe, nous devons d'abord nous assurer qu'il s'agit bien de vous.
+
+              Commencez par choisir où recevoir un code de confirmation.</span>
+          </div>
+        <p class="fw-bold fs-4">Envoyer un email à de************@****.***</p>
+        <div class="mt-1">
+          <button type="button" style="height:50px" class="btn btn-dark w-100 bg-dark rounded-1" (click)="envoyerCode()" >Suivant</button>
+          <button type="button" style="height:50px" (click)="fermerDialog()" class="mt-1 btn btn-white w-100 bg-white rounded-1 border-dark" >Annuler</button>
+        </div>
+
+      </div>
+    </div>
+    <!--reset de compte-->
+    <div class="modal-content border-0" id="imageModal"  *ngIf="codeEnvoyer && !codeVerifier">
+      <div class="modal-body py-0 ">
+      <!--   <p class="  test-center d-flex">
+          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+          </svg> <span class="text-warning mx-2 test-center d-block" >
+            Consultez vos emails pour récupérer
+            votre code de confirmation. Si vous devez demander un nouveau code, revenez en arrière et sélectionnez de nouveau une méthode de confirmation.</span></p> -->
+            <div class="alert alert-warning d-flex" role="alert">
+             <div> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+              </svg> </div><span class="text-dark mx-2 test-center d-block" > Consultez vos emails pour récupérer
+                votre code de confirmation. Si vous devez demander un nouveau code, revenez en arrière et sélectionnez de nouveau une méthode de confirmation.</span>
+            </div>
+        <form #verifierCodeform="ngForm" (ngSubmit)="verifierCode(verifierCodeform)">
+          <div class="form-floating mb-1">
+            <input [ngClass]="errorCodeConfirmation_Password ? 'border-danger' : 'border-dark'" type="text" class="form-control " id="floatingInput"
+            placeholder="Code de vérification" name="code" ngModel required >
+            <label for="floatingInput" class="text-dark">Entrez votre code.
+            </label>
+          </div>
+          <p *ngIf="errorCodeConfirmation_Password" class="text-danger">Le code n'est pas correct.</p>
+          <!-- Boutons dans le formulaire -->
+          <div class="mt-4">
+            <button type="submit"  style="height:50px" class="btn btn-dark w-100 bg-dark rounded-1" [disabled]="verifierCodeform.invalid">Confirmer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!---changer mot de passe-->
+    <div class="modal-content border-0" id="imageModal"  *ngIf="codeVerifier ">
+      <div class="modal-body py-0 ">
+      <!--   <p class="  test-center d-flex">
+          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+          </svg> <span class="text-warning mx-2 test-center d-block" >
+            Consultez vos emails pour récupérer
+            votre code de confirmation. Si vous devez demander un nouveau code, revenez en arrière et sélectionnez de nouveau une méthode de confirmation.</span></p> -->
+            <div class="alert alert-warning d-flex" role="alert">
+             <div> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+              </svg> </div><span class="text-dark mx-2 test-center d-block" > Assurez‑vous que votre mot de passe contient huit caractères ou plus. Pour disposer d'un mot de passe fort, essayez d'inclure des chiffres, des lettres et des signes de ponctuation.
+
+               </span>
+            </div>
+        <form #modifierMotDePasseform="ngForm" (ngSubmit)="modifierMotDePasse(modifierMotDePasseform)">
+          <div class="form-floating  ">
+            <input   type="{{ showPassword ? 'text' : 'password' }}"
+            class="pe-5 form-control rounded-3 border-2 border-dark w-100" placeholder="password"
+             id="password" name="password" required minlength="8" ngModel
+            #password="ngModel">
+            <label for="" class="ms-2">Entrez un nouveau mot de passe.            </label>
+            <span (click)="togglePassword()" class="eye-icon mt-2" [ngClass]="{'active': showPassword}"></span>
+         </div>
+         <div class="form-floating  mt-1">
+          <input [ngClass]="NoCorrespondance ? 'border-danger' : 'border-dark'" type="{{ showSecondPassword ? 'text' : 'password' }}"
+          class="pe-5 form-control rounded-3 border-2  w-100" placeholder="password"
+           id="SecondPassword" name="SecondPassword" required minlength="8" ngModel
+          #password="ngModel">
+          <label for="" class="ms-2">Confirmez votre mot de passe.          </label>
+          <span (click)="toggleSecondPassword()" class="eye-icon mt-2" [ngClass]="{'active': showSecondPassword}"></span>
+       </div>
+          <p *ngIf="NoCorrespondance" class="text-danger">Les mots de passe ne correspondent pas.</p>
+
+          <!-- Boutons dans le formulaire -->
+          <div class="mt-2">
+            <button type="submit" style="height:50px" class="btn btn-dark w-100 bg-dark rounded-1" [disabled]="modifierMotDePasseform.invalid">changer le mot de passe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</mat-dialog-content>

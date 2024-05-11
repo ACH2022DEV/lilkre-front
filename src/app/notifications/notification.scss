@@ -1,0 +1,33 @@
+.hover:hover{
+   // box-shadow: 0 1rem 2rem rgba(black, .250);
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   transition: 0.5 ease-in-out;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.sidebar{
+  border-top: 0.5px solid #a09e9e;
+}
+  .col-9{
+    img{
+        margin-left: 50px;
+    }
+  }
+  .col-2{
+    margin: auto;
+    
+    img{
+        padding: 2px;
+        margin: auto;
+    }
+    div{
+        box-shadow: none;
+       }
+   
+  }
+  
+   .col-md-2 {
+  
+   }
+    
+  

@@ -1,0 +1,148 @@
+
+<div class="container-fluid background  d-flex justify-content-center justify-items-center " >
+  <div class=" row    mt-5 col-md-11 col-lg-10 col-xl-8 col-12 col-sm-12 mx-auto   rounded-5 h-100   mb-5  ">
+    <div class="">
+
+   <div class="d-flex justify-content-center ">
+    <form  #f="ngForm" (ngSubmit)="onRegistre(f)" class="w-50  p-2  my-3 registershadow"
+    >
+    <h1  class=" text-center font-normal fs-2">Register</h1>
+      <div class="form-group fw-bold ">
+        <div class="form-floating mb-1">
+           <input [ngClass]="{'border-danger': errorUsename}" class="form-control rounded-2  border border-dark" type="text" placeholder="Username" id="username" name="username"  required minlength="4" ngModel #username="ngModel">
+          <label for=" ">Username</label></div>
+
+        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="fw-bold text-danger rounded-3">
+
+          <div *ngIf="username.errors?.['required']" >
+            Le pseudo est obligatoire.
+          </div>
+          <div *ngIf="username.errors?.['minlength']" >
+            Le pseudo doit avoir au moin 4 caractères
+          </div>
+      </div>
+      <div *ngIf="errorUsename && !username.invalid && !username.errors" >
+       <p class="text-danger fw-bold">{{errorUsename}}</p>
+      </div>
+    </div>
+
+      <div class="form-group ">
+        <div class="form-floating mb-1">
+             <input class="pe-5 form-control rounded-2  border border-dark" type="{{ showPassword ? 'text' : 'password' }}" placeholder="Password"
+             id="password" name="password" required minlength="4" ngModel #password="ngModel">
+          <label for=" ">Password</label>
+          <span (click)="togglePassword()" class="eye-icon mt-2" [ngClass]="{'active': showPassword}"></span>
+        </div>
+
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="fw-bold  text-danger rounded-3">
+
+          <div *ngIf="password.errors?.['required']" >
+            Le pseudo est obligatoire.
+          </div>
+          <div *ngIf="password.errors?.['minlength']" >
+            Le pseudo doit avoir au moin 4 caractères
+          </div>
+      </div>
+      </div>
+      <div class="form-group">
+        <div class="form-floating mb-1">
+           <input class="form-control rounded-2  border border-dark" type="text" placeholder="Nom" id="nom" name="nom" required minlength="4" ngModel #nom="ngModel">
+           <label for="">Nom</label></div>
+
+
+        <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="fw-bold  text-danger rounded-3">
+
+          <div *ngIf="nom.errors?.['required']" >
+            Le nom est obligatoire.
+          </div>
+          <div *ngIf="nom.errors?.['minlength']" >
+            Le nom doit avoir au moin 4 caractères
+          </div>
+      </div>
+      </div>
+      <div class="form-group fw-bold">
+        <div class="form-floating mb-1">
+          <input class="form-control rounded-2  border border-dark" type="text" id="prenom" placeholder="Prenom" name="prenom" required minlength="4" ngModel #prenom="ngModel">
+          <label for=" ">Prenom</label> </div>
+
+
+        <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)" class="fw-bold  text-danger rounded-3">
+
+          <div *ngIf="prenom.errors?.['required']" >
+            Le prenom est obligatoire.
+          </div>
+          <div *ngIf="prenom.errors?.['minlength']" >
+            Le prenom doit avoir au moin 4 caractères
+          </div>
+      </div>
+      </div>
+      <div class="form-group ">
+        <div class="form-floating mb-1">
+          <input [ngClass]="{'border-danger': errorEmail}" class="form-control rounded-2  border border-dark"
+          type="email" placeholder="Email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required  ngModel #email="ngModel">
+          <label for=" ">Email</label>
+        </div>
+
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="fw-bold text-danger rounded-3">
+
+          <div *ngIf="email.errors?.['required']" >
+             l'email est obligatoire.
+          </div>
+          <div *ngIf="email.errors?.['pattern']" >
+            l'email n'est pas valide
+          </div>
+
+      </div>
+      <div *ngIf="errorEmail && !email.invalid && !email.errors" >
+        <p class="text-danger fw-bold">{{errorEmail}}</p>
+      </div>
+      </div>
+      <!--La dérniere méthode de le role-->
+      <!-- <div class="form-group  ">
+    <select class="form-select form-select-lg mb-1 rounded-2  border border-dark" required   name="role" ngModel #role="ngModel" aria-label=".form-select-lg example">
+      <option value="" class="text-center">Select your Role</option>
+  <option class="text-center" *ngFor="let pow of powers" value="{{pow.value}}">{{pow.value}}</option>
+
+</select>
+<div *ngIf="role.invalid && (role.dirty || role.touched)" class="fw-bold text-danger rounded-3">
+
+  <div *ngIf="role.errors?.['required']" >
+     Votre role est obligatoire.
+  </div></div>
+    </div> -->
+<!--La dérniere méthode de le role-->
+
+
+      <p class="sidebutton "></p>
+      <div class="d-flex justify-content-center mb-3">
+         <button class=" btn color w-50  mx-1 text-white rounded-2" type="submit" [disabled]="f.invalid"> Register</button>
+      <button routerLink="/login" class="   btn btn-dark w-50 rounded-2" >Retour</button></div>
+
+    </form>
+  </div>
+</div>
+  </div>
+  </div>
+
+
+
+  <!----essai pour date   Previous méthode-->
+
+<!--   <div class="container mt-4">
+    <form [formGroup]="offerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="datedebut">Start Date</label>
+        <input type="date" name="datedebut" [(ngModel)]="relation.datedebut"  class="form-control" id="datedebut" formControlName="datedebut">
+      </div>
+      <div class="form-group">
+        <label for="datefin">End Date</label>
+        <input type="date" name="datefin" [(ngModel)]="relation.datefin" class="form-control" id="datefin" formControlName="datefin">
+<mat-error >
+  <div *ngIf="message"> {{message}}</div>
+</mat-error>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div> -->
+
+

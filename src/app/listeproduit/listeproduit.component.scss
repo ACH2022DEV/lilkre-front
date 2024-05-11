@@ -1,0 +1,36 @@
+.search-hero {
+    max-width: 500px;
+    margin:auto;
+  }
+
+
+  .form-control::placeholder  {
+    font-family: FontAwesome;
+  }
+  a.active{
+    background-color: rgb(255, 255, 255);
+    color: rgb(5, 4, 4);
+  }
+
+
+
+
+
+  .page-link{
+    text-decoration: none;
+    color: rgb(253, 251, 251);
+    background-color: #f68b1e;
+    margin: 3px;
+   cursor: pointer;
+}
+.color{
+  background-color: #f68b1e;
+}
+
+  .StyleButton{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+     //background-color: #f68b1e;
+     background-color: #151413;
+      color: #fff;
+      height: 45px;
+    }

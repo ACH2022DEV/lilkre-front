@@ -1,0 +1,162 @@
+<div class="container-fluid   mt-5 mb-5">
+<div class="row ">
+    <form #f="ngForm" class="col-md-6 mx-auto shadow-sm col-12 col-sm-10 col-xl-6  bg-white  p-3  bg-body rounded-2 h-100 " (ngSubmit)="addProduit(f)">
+      <div style="background-color: #e9ecef;" class=" alert   text-dark fw-semibold fs-4 text-center" role="alert">
+        Ajoutez les informations d'un produit.
+      </div>
+
+      <div class="form-group  ">
+        <div class="form-floating   ">
+          <input class="form-control shadow-sm mt-2 text-center  " minlength="3" maxlength="60" placeholder="description" type="text" id="description" name="description" ngModel required  #description="ngModel"
+          [class.border-red]="description.invalid && (description.dirty || description.touched)">
+          <label for="floatingInput" >Description</label>
+        </div>
+       <div *ngIf="description.invalid && (description.dirty || description.touched)" class="p-2 mt-1 text-danger  text-start rounded-1">
+
+          <div *ngIf="description.errors?.['required']" >
+            <i class="bi bi-exclamation-triangle"></i> La description est obligatoire.
+          </div>
+          <div *ngIf="description.errors?.['minlength']">
+            <i class="bi bi-exclamation-triangle"></i>   La description doit avoir au moins 3 caractères.
+        </div>
+        <div *ngIf="description.errors?.['maxlength']">
+          <i class="bi bi-exclamation-triangle"></i>    La description ne peut pas dépasser 60 caractères.
+        </div>
+      </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-floating">
+        <input class="form-control text-center" type="number" max="100" min="0" placeholder="Remise" id="remise" name="remise"
+         ngModel required  #remise="ngModel" [class.border-red]="remise.invalid && (remise.dirty || remise.touched)">
+        <label for="">Remise(%)</label>
+      </div>
+
+        <div *ngIf="remise.invalid && (remise.dirty || remise.touched)" class="p-2  mt-1 text-danger  text-start rounded-1 ">
+
+          <div *ngIf="remise.errors?.['required']" >
+            <i class="bi bi-exclamation-triangle"></i>  La remis est obligatoire.
+          </div>
+          <div *ngIf="remise.value > 100">
+            <i class="bi bi-exclamation-triangle"></i> La remise ne peut pas dépasser 100%.
+          </div>
+      </div>
+      </div>
+      <div class="form-group">
+        <div class="form-floating">
+        <input class="form-control text-center" min="0" placeholder="TVA" type="number" id="tva" name="tva" ngModel
+        required  #tva="ngModel" [class.border-red]="tva.invalid && (tva.dirty || tva.touched)">
+         <label for="">TVA</label></div>
+        <div *ngIf="tva.invalid && (tva.dirty || tva.touched)" class="p-2  mt-1 text-danger  text-start rounded-1 ">
+
+          <div *ngIf="tva.errors?.['required']" >
+            <i class="bi bi-exclamation-triangle"></i> Le tva est obligatoire.
+          </div>
+
+      </div>
+      </div><div class="form-group">
+        <div class="form-floating">
+        <input class="form-control text-center"  min="1" type="number" id="quantite"   (ngModelChange)="validateQuantite($event)"
+        placeholder="quantite" name="quantite" ngModel  required  #quantite="ngModel"
+        [class.border-red]="quantite.invalid && (quantite.dirty || quantite.touched)"> <label for="">Quantité</label> </div>
+        <div *ngIf="quantite.invalid && (quantite.dirty || quantite.touched)" class="p-2  mt-1 text-danger  text-start rounded-1">
+          <div *ngIf="quantite.errors?.['required']" >
+            <i class="bi bi-exclamation-triangle"></i>  La quantite est obligatoire.
+          </div>
+          <div *ngIf="quantite.value === 0">
+            <i class="bi bi-exclamation-triangle"></i>  La quantité ne peut pas être égale à zéro.
+          </div>
+
+      </div>
+      <div *ngIf="floa_error" class="p-2  mt-1 text-danger  text-start rounded-1">
+        <i class="bi bi-exclamation-triangle"></i>  La quantité doit être un entier.
+      </div>
+    <!--   <div *ngIf="floa_error" class="p-2  mt-2 alert alert-danger rounded-1 text-center">
+        La quantité doit être un nombre entier.
+      </div> -->
+      </div>
+      <div class="form-group">
+        <div class="form-floating">
+          <input class="form-control text-center" min="0.1" placeholder="Prix" type="number" id="prix" name="prix" ngModel
+          required  #prix="ngModel" [class.border-red]="prix.invalid && (prix.dirty || prix.touched)">
+        <label for="fname">Prix (En TND)</label></div>
+
+        <div *ngIf="prix.invalid && (prix.dirty || prix.touched)" class="p-2  mt-1 text-danger  text-start rounded-1 ">
+
+          <div *ngIf="prix.errors?.['required']" >
+            <i class="bi bi-exclamation-triangle"></i> Le prix est obligatoire.
+          </div>
+
+          <div *ngIf="prix.errors?.['min'] && !prix.errors?.['required']">
+            <i class="bi bi-exclamation-triangle"></i> Le prix doit être supérieur à 0.1 dinars.
+          </div>
+
+      </div>
+      </div>
+      <div class="form-group">
+        <div class="form-floating">
+           <input class="form-control text-center" minlength="3" maxlength="30" placeholder="Pays Origine" type="text"
+           id="paysOrigine" name="paysOrigine" ngModel required  #paysOrigine="ngModel"
+           [class.border-red]="paysOrigine.invalid && (paysOrigine.dirty || paysOrigine.touched)">
+        <label for="fname">Pays Origine</label></div>
+
+       <div *ngIf="paysOrigine.invalid && (paysOrigine.dirty || paysOrigine.touched)" class="p-2 mt-1 text-danger  text-start rounded-1 ">
+
+          <div *ngIf="paysOrigine.errors?.['required']" >
+            <i class="bi bi-exclamation-triangle"></i>  La paysOrigine est obligatoire.
+          </div>
+          <div *ngIf="paysOrigine.errors?.['minlength']">
+            <i class="bi bi-exclamation-triangle"></i>   Le paysOrigine doit avoir au moins 3 caractères.
+        </div>
+        <div *ngIf="paysOrigine.errors?.['maxlength']">
+          <i class="bi bi-exclamation-triangle"></i>    Le paysOrigine ne peut pas dépasser 30 caractères.
+        </div>
+      </div></div>
+      <div class="alert alert-warning" role="alert">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4m.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
+        </svg> Note : Vous pouvez ajouter jusqu'à 6 images au maximum.
+      </div>
+        <!-- ajouter des photos-->
+      <div class="mb-2 container-fluid  rounded-3  ">
+        <div class=" bg-white  ">
+            <div class="d-flex flex-wrap row    rounded-3">
+        <div  class="col-md-6 col-lg-4 col-12 col-sm-6 img" *ngFor="let index of [0, 1, 2, 3, 4, 5]">
+         <div style="position: relative;">
+          <div class="position-absolute top-0 start-0 " *ngIf="selectedImages[index]">
+            <!-- Bouton de suppression -->
+            <button class="btn delete-btn border border-0" type="button" (click)="onDeleteImage(index)"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-circle text-white bg-dark rounded-circle" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+            </svg></button>
+        </div>
+          <label for="fileInput{{index}}" class="w-100 " style="height: 200px;">
+            <img  [src]="selectedImages[index] || '../../../assets/images/img/uploadimage.png'"
+             alt="Sélectionner une image" class="rounded-2  bg-white shadow-sm p-1" width="100%" height="100%" style="cursor: pointer;">
+
+          </label>
+          <input class="w-100" id="fileInput{{index}}" ngModel type="file" (change)="onImageSelected($event, index)" accept="image/*" style="display: none;">
+
+
+        </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  <!-- fin d'ajouter des photos-->
+      <hr>
+      <!-- <button class="btn btn-primary mx-2" type="button" (click)="addimage()" >add image</button> -->
+      <div class="row d-flex justify-content-evenly">
+      <button class="rounded-pill border border-0 btn btnColor text-white shadow-lg col-md-5 col-10 col-sm-5 my-1" data-bs-dismiss="modal"
+       data-bs-toggle="modal" data-bs-target="#exampleModal3" type="submit" [disabled]="f.invalid || floa_error">Save Changes</button>
+
+      <button routerLink="/adminliste-produit" class="rounded-pill border border-0 btn btn-dark col-md-5 shadow-lg col-10 col-sm-5 my-1" >Retour</button></div>
+    </form>
+
+
+
+
+
+</div>
+

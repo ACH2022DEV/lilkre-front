@@ -1,0 +1,100 @@
+<div class="container-fluid   mt-5  mb-5">
+  <div class="row d-flex justify-content-center ">
+  <form #f="ngForm"  class="col-md-6 col-sm-10 mx-auto col-12 bg-white shadow p-3  bg-body rounded-2 h-100" (ngSubmit)="UpdatePersonne(f)">
+    <div class="form-group">
+      <div class="form-floating"> 
+        <input class="form-control text-center" placeholder="N°Id:" type="number" id="id" [(ngModel)]="personne.id"  disabled name="id" ngModel   #id="ngModel">
+      <label for="">N°Id:</label></div>
+      
+     
+    </div>
+    <div class="form-group">
+      <div class="form-floating"> 
+         <input class="form-control text-center" placeholder="Adress:" type="text" id="adress" [(ngModel)]="personne.adress" name="adress" ngModel pattern="[a-zA-Z_0-9]{4,}" required  #adress="ngModel">
+      <label for="">Adress:</label></div> 
+      
+    <div *ngIf="adress.invalid && (adress.dirty || adress.touched)" class="p-2 my-2 bg-danger text-white rounded-3">
+
+        <div *ngIf="adress.errors?.['required']" >
+        l'adress est obligatoire.
+        </div>
+        <div *ngIf="adress.errors?.['pattern']" >
+          l'adress doit avoir au moin 4 caractères
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+      <div class="form-floating"> 
+        <input class="form-control text-center" placeholder="Nom:" type="text" id="nom" [(ngModel)]="personne.nom" name="nom" ngModel pattern="[a-zA-Z_0-9]{4,10}" required  #nom="ngModel">
+      <label for="">Nom:</label> </div>
+   
+     <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="p-2 my-2 bg-danger text-white rounded-3">
+
+        <div *ngIf="nom.errors?.['required']" >
+          Le nom est obligatoire.
+        </div>
+        <div *ngIf="nom.errors?.['pattern']" >
+          Le nom doit avoir au min 4 caractères et max 8
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+      <div class="form-floating">
+        <input class="form-control text-center" placeholder="Prénom:" type="text" id="prenom" [(ngModel)]="personne.prenom" name="prenom" ngModel pattern="[a-zA-Z_0-9]{4,10}" required  #prenom="ngModel">
+      <label for="">Prénom:</label> </div>
+     
+      <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)" class="p-2 my-2 bg-danger text-white rounded-3">
+
+        <div *ngIf="prenom.errors?.['required']" >
+          Le prenom est obligatoire.
+        </div>
+        <div *ngIf="prenom.errors?.['pattern']" > 
+          Le prenom doit avoir au moin 4 caractères et max 8
+        </div>
+    </div></div>
+    <div class="form-group">
+      <div class="form-floating">
+        <input class="form-control text-center" placeholder="Numéro de téléphone:" type="number" id="tel" [(ngModel)]="personne.tel" name="tel" ngModel pattern="\d{8}"   required  #tel="ngModel">
+      <label for="">Numéro de téléphone:</label></div>
+
+   
+      <div *ngIf="tel.invalid && (tel.dirty || tel.touched)" class="p-2 my-2 bg-danger text-white rounded-3">
+
+        <div *ngIf="tel.errors?.['required']" >
+          Le numéro de tel est obligatoire.
+        </div>
+        <div *ngIf="tel.errors?.['pattern']" > 
+          Le tel doit avoir au maximum 8 chiffres
+        </div>
+        
+        
+
+    </div>
+    </div>
+     <div class="form-group my-2" >
+      <input type="file"multiple ngModel class="form-control" name="file" (change)="onSelectedFile($event)"   >
+
+
+    </div>
+    <hr> 
+    <div class="row d-flex justify-content-evenly">
+    <button class="btn btnColor text-white shadow-lg col-md-5 col-10 my-1 col-sm-5" data-bs-toggle="modal" data-bs-target="#exampleModal3" type="submit" [disabled]="f.invalid">Save Changes</button>
+      <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modification avac succés</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              vous avez modifié une personne
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    <button routerLink="/list-personne" class="btn btn-dark col-md-5 shadow-lg col-10  my-1 col-sm-5" >Retour</button></div>
+
+  </form>
+ <!--  <img  class="py-2 col-3 min-vw-70  " [src]="imgURL" width="100"  height="500"  *ngIf="imgURL" > -->
+</div></div>

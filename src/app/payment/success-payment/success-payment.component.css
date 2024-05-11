@@ -1,0 +1,8 @@
+.margin{
+  margin-top: 100px;
+  margin-bottom: 150px;
+}
+.styleButton:hover {
+  background-color: #000;
+  color: #fff;
+}

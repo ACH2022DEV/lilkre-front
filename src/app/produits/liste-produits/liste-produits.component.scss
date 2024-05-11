@@ -1,0 +1,183 @@
+.animate :hover{
+    //transition: 0.1 ease-in-out;
+  // transform: scale(1.02);
+   // box-shadow: 0 3px 4px rgba(27, 22, 22, 0.1);
+  // box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+
+    button{
+        visibility:visible;
+    }
+
+
+}
+p{margin: 0px;
+}
+
+
+/* button{
+    visibility:hidden;
+} */
+.page-link.active{
+  background-color: rgb(255, 255, 255);
+  color: rgb(5, 4, 4);
+}
+.page-link{
+  text-decoration: none;
+  color: rgb(253, 251, 251);
+  background-color: #f68b1e;
+  margin: 3px;
+ cursor: pointer;
+}
+.animate{
+   //box-shadow: 0 3px 4px rgba(27, 22, 22, 0.1);
+   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+//box-shadow:  0 1rem 3rem rgba(black, .175);
+
+}
+.card:hover{
+    //box-shadow: 5px 10px 10px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+   // box-shadow: 0 2rem 2rem rgba(black, .250);
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    transition: 0.5 ease-in-out;
+  transform: scale(1.05);
+}
+/* button[disabled]:hover{
+    background-color: gray;
+    cursor: none;
+} */
+
+
+
+
+
+
+
+.btnColor{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    background-color: #f68b1e;
+    height: 40px;
+   // color: #fff;
+
+}
+.col-md-3{
+    max-width: 300px;
+}
+
+.color-bg{
+    color: #f68b1e;
+    background-color: #feefde;
+    font-family: Roboto,Arial,Helvetica,sans-serif;
+
+}
+.sidebutton {
+  a{
+    color: #000;
+  }
+  a:hover{
+color: #f58a07;
+  }
+}
+.col-12{
+  margin:auto;
+
+}
+.sidebar{
+border-top: 1px solid #dddddd;}
+.sidebutton{
+    border-bottom: 1px solid #dddddd;}
+a,h4{
+    color: #898989;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.checked {
+    color: orange;
+    margin: 4px;
+
+  }
+  .color{
+  color:rgb(220, 216, 216);
+  margin: 4px;
+
+  }
+  .form-check-input:hover{
+    box-shadow: 8 4px 8px 0 rgba(240, 128, 7, 0.2);
+  }
+  .form-check-input{
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+  }
+  .form-check-input:checked{
+    background-color: #f68b1e;
+    width: 20px;
+    height: 20px;
+
+  }
+  .checked {
+    color: orange;
+    margin: 5px;
+
+  }
+  .color{
+    color:rgb(184, 184, 184);
+    margin: 5px;
+
+  }
+  .btnColor1{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    background-color: #f68b1e;
+    height: 39px;
+
+}
+  input[type="radio"]:checked {
+    background-color: #fc8c03;
+  }
+  input[type="radio"] {
+    /* remove standard background appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* create custom radiobutton appearance */
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+    /* background-color only for content */
+    background-clip: content-box;
+    border: 3px solid #bbbbbb;
+
+    border-radius: 50%;
+  }
+  @media (min-width: 992px) {
+    button{
+      visibility:hidden;
+      font-family: Roboto,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif;
+      font-size: .875rem;
+      }
+   }
+   @media (max-width: 370px) {
+    .checked{
+      //margin: 1px;
+      width: 8px;
+    }
+    }
+
+    .heart-icon {
+      position: absolute;
+      bottom: 10px; /* Ajustez la position verticale de l'icône par rapport à l'image */
+      right: 10px; /* Ajustez la position horizontale de l'icône par rapport à l'image */
+    }
+    .favorite {
+      fill:  #f68b1e; /* Change the fill color to orange */
+    }
+    .bg-white {
+      fill: white; /* Change the background color to white */
+    }
+
+
+     .bi-heart-fill{
+      color:  #f68b1e;
+    }

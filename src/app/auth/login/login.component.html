@@ -1,0 +1,175 @@
+
+
+<div class="container-fluid     background " >
+  <div class="row d-flex justify-content-center align-items-center ">
+
+ <div class="  col-md-8 " >
+  <div class=" row  Loginshadow my-5 " >
+    <div class="col-md-5 col-5 p-0" >
+      <img src="../../../../assets/images/bg-dar.avif" class="w-100 h-100" alt="Ma Image" >
+
+              </div>
+    <div class="col-md-7 col-7 mx-0 p-0 " >
+      <div class=""  >
+        <h3 class="login-title text-center  p-2 fs-5">Connexion</h3>
+            <h5 class="fw-normal text-white text-center my-2 fs-5">Vous n'avez pas de compte ?<a class="" routerLink="/register"  style="color: #3b5999;"> S'inscrire</a>
+            </h5>
+        <div class="col-md-12 d-flex justify-content-center">
+          <form #f="ngForm" (ngSubmit)="entrerlogin(f)" class="p-1 w-100 mt-1" >
+          <div class="form-group col-md-10 mx-auto">
+            <div class="form-floating mb-2  ">
+               <input class="form-control rounded-3" placeholder="Username" type="text" id="username" name="username" required minlength="4" ngModel #username="ngModel">
+             <label for="">Username</label></div>
+
+
+            <div *ngIf="username.invalid && (username.dirty || username.touched)"
+              class="p-2 fs-6 text-center fw-bold  text-danger rounded-3">
+
+              <div *ngIf="username.errors?.['required']">
+                Le pseudo est obligatoire.
+              </div>
+              <div *ngIf="username.errors?.['minlength']">
+                Le pseudo doit avoir au moin 4 caractères
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-group  ">
+            <!-- <label for="fname">password</label> -->
+            <div class="form-floating col-md-10 mx-auto ">
+              <input type="{{ showPassword ? 'text' : 'password' }}"
+              class="pe-5 form-control rounded-3 border-2  w-100" placeholder="password"
+               id="password" name="password" required minlength="4" ngModel
+              #password="ngModel">
+              <label for="" class="ms-2">password</label>
+              <span (click)="togglePassword()" class="eye-icon mt-2" [ngClass]="{'active': showPassword}"></span>
+           </div>
+
+            <div *ngIf="password.invalid && (password.dirty || password.touched)"
+              class="p-2 mb-2 fs-6 fw-bold text-center  text-danger rounded-3">
+
+              <div *ngIf="password.errors?.['required']">
+                Le Mot de passe est obligatoire.
+              </div>
+              <div *ngIf="password.errors?.['minlength']">
+                Le Mot de passe doit avoir au moin 4 caractères
+              </div>
+            </div>
+          </div>
+          <div *ngIf="loginError" class="d-flex justify-content-center ">
+            <span class="text-danger fw-bold text-center">login ou mot de passe erroné</span>
+          </div>
+        <hr>
+    <div class="d-flex justify-content-center mx-auto col-md-10 col-12 ">
+       <button style="cursor: pointer;" class="   w-100 custom-button rounded-3  fs-4 fw-semibold shadow" type="submit" [disabled]="f.invalid">Se connecter</button>
+    </div>
+
+
+          <div class="d-flex mt-2 justify-content-center"><a style="cursor: pointer;" class="text-center text-white" (click)="resetPassword()"  >Mot de passe oublié ?</a> </div>
+                   <div class="row my-2">
+                    <div class="d-flex justify-content-between">
+                      <hr class=" border-3  text-white"style="width:200px">
+                      <p class="fs-5">ou</p>
+                      <p class=" "style="width:200px;
+                     "></p>
+                    </div>
+                  </div>
+
+        </form>
+
+      </div>
+
+<!--ajouter les autres button ici-->
+
+  <!-- <p class="sidebutton"></p> -->
+     <div class="d-block   col-md-12 justify-content-center p-1 ">
+
+      <!-- <div class="d-flex justify-content-center ">
+      <button class=" btn color text-white mb-2 w-75 rounded-1   fw-semibold  height" routerLink="/register">
+        <h5>Créer nouveau compte</h5> </button>
+
+      </div> -->
+
+    <!---connexion avec facebook-->
+
+    <div class=" mb-1 d-flex justify-content-center">
+      <button (click)="signInWithFB()" type="button" style="width: 400px;height: 40px;"
+      class="btn  btn-block rounded-pill bg-white" >
+        <div class="d-flex align-items-center mb-5 "> <!-- Utilisez la classe "d-flex" pour afficher les éléments en ligne et "align-items-center" pour les aligner verticalement -->
+
+          <div class="me-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="text-end text-primary bi bi-facebook me-0 p-0" viewBox="0 0 16 16">
+              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+            </svg>
+          </div>
+          <p class=" mb-0 fst-6 fw-bold text-dark ">Se connecter avec facebook</p>
+           <!-- Utilisez la classe "ms-2" pour ajouter une marge à gauche (espacement) -->
+        </div>
+      </button>
+    </div>
+    <!---connexion avec google-->
+    <!-- <div class="col-12 mb-2  justify-content-center">
+      <button (click)="signInWithGoogle()" type="button" style="background: #797979" class="btn  btn-block rounded-1 ">
+        <div class="d-flex align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-google text-white" viewBox="0 0 16 16">
+            <path d="M9.568 7.346v2.73h4.497c-.222 1.448-1.577 4.224-4.497 4.224-2.699 0-4.91-2.257-4.91-5.049s2.211-5.05 4.91-5.05c1.546 0 2.59.671 3.189 1.24l2.173-2.094c-1.502-1.413-3.43-2.27-5.361-2.27-4.331 0-7.86 3.471-7.86 7.751s3.53 7.751 7.86 7.751c4.967 0 7.537-3.599 7.537-7.248 0-.483-.049-.864-.125-1.233H9.568z"/>
+          </svg><div class="ms-5"></div>
+          <p class=" mb-0 fst-6 fw-bold text-white">Google</p>
+        </div>
+      </button>
+    </div> -->
+
+     <div    class="w-100   d-flex justify-content-center " id="google-button" >
+
+    </div>
+   <!--  <div (click)="loginInWithGoogle()" class="w-100   d-flex justify-content-center ">
+    <div id="g_id_onload"
+     data-client_id="941760382433-eob8b45vkics649lr4s88lrptim76qdu.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="redirect"
+     data-login_uri="http://localhost:4200/login"
+     data-itp_support="true">
+</div>
+
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="pill"
+     data-theme="outline"
+     data-text="signin_with"
+     data-size="large"
+     data-logo_alignment="left"
+     data-width="400">
+</div>
+</div> -->
+
+
+<!--fintest-->
+    <!---connexion avec microsoft-->
+    <div class=" my-1 d-flex justify-content-center ">
+      <button (click)="signInWithMicrosoft()" type="button" style="width: 400px;"
+       class="btn  btn-block rounded-pill bg-white ">
+        <div class="d-flex align-items-center"> <!-- Utilisez la classe "d-flex" pour afficher les éléments en ligne et "align-items-center" pour les aligner verticalement -->
+          <img alt="svgImg" height="25px" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCI+CjxwYXRoIGZpbGw9IiNmZjU3MjIiIGQ9Ik02IDZIMjJWMjJINnoiIHRyYW5zZm9ybT0icm90YXRlKC0xODAgMTQgMTQpIj48L3BhdGg+PHBhdGggZmlsbD0iIzRjYWY1MCIgZD0iTTI2IDZINDJWMjJIMjZ6IiB0cmFuc2Zvcm09InJvdGF0ZSgtMTgwIDM0IDE0KSI+PC9wYXRoPjxwYXRoIGZpbGw9IiNmZmMxMDciIGQ9Ik0yNiAyNkg0MlY0MkgyNnoiIHRyYW5zZm9ybT0icm90YXRlKC0xODAgMzQgMzQpIj48L3BhdGg+PHBhdGggZmlsbD0iIzAzYTlmNCIgZD0iTTYgMjZIMjJWNDJINnoiIHRyYW5zZm9ybT0icm90YXRlKC0xODAgMTQgMzQpIj48L3BhdGg+Cjwvc3ZnPg=="/>
+          <div class="ms-5"></div>
+          <p class=" mb-0 fst-6 fw-bold text-dark">Se connecter avec Microsoft</p> <!-- Utilisez la classe "ms-2" pour ajouter une marge à gauche (espacement) -->
+        </div>
+      </button>
+    </div>
+
+    </div>
+<!--ajouter les autres button ici-->
+
+    </div>
+    </div>
+
+
+</div>
+ </div>
+</div></div>
+
+
+
+
+
+

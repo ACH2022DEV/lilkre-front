@@ -1,0 +1,82 @@
+
+<div class="container bg-white  shadow rounded-3 mt-5 mb-5">
+ <div class="d-flex p-3"><a routerLink="/liste-produits"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="currentColor" class="bi bi-arrow-left mt-1 " viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg></a><h3 class="mx-2 ">Commentaires clients vérifiés</h3>  </div>
+ <div class="sidebar row">
+  <div class="col-md-3 p-3  margin ">
+    <div class="stars d-flex justify-content-center  "size="25">
+      <div class="flex">
+        <input [routerLink]="['/avisSearch/',5]" type="radio" name="radio" id="radio1" />
+        <label for="radio1"></label>
+      </div>
+      <a  >
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      </a></div>
+    <div class="stars d-flex justify-content-center ms-0  ">
+      <div class="flex">
+        <input [routerLink]="['/avisSearch/', 4]" type="radio" name="radio" id="radio3" />
+        <label for="radio3"></label>
+      </div><a >
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star color"></span> </a> </div>
+    <div class="stars d-flex justify-content-center ms-0 "><div class="flex">
+      <input [routerLink]="['/avisSearch/', 3]" type="radio" name="radio" id="radio1" />
+      <label for="radio1"></label>
+    </div><a >
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>          </a></div>
+    <div class="stars d-flex justify-content-center ms-0 "><div class="flex">
+      <input [routerLink]="['/avisSearch/', 2]" type="radio" name="radio" id="radio1" />
+      <label for="radio1"></label>
+    </div><a >
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>
+                </a></div>
+    <div class="stars d-flex justify-content-center ms-0 "><div class="flex">
+      <input [routerLink]="['/avisSearch/', 1]" type="radio" name="radio" id="radio1" />
+      <label for="radio1"></label>
+    </div>
+    <a >
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>
+      <span class="fa fa-star color"></span>
+                </a></div>
+  </div>
+  <div class="col-md-8 sideLeft "> <h4 class="p-3"> COMMENTAIRES({{this.lenght}})</h4>
+  <div class="  w-75  mb-3 my-2 mt-3 sidebar p-2 bg-light  shadow rounded-4 border-5" *ngFor="let avis of results; index as i">
+    <div>
+     
+      <a [routerLink]="['/visualiser-personne/',avis.personne.id]"> <h5 class="p-1"><img [src]='convertBase64ToImage(avis.personne.images)' class="rounded-circle" width="50"
+        height="50"> {{avis.personne.nom}} {{avis.personne.prenom}}</h5></a>
+      <div class="stars d-flex justify-content-start ">
+        <ngx-star-rating [(ngModel)]=avis.etoile [id]="'rating1'+i" [disabled]="true"></ngx-star-rating>
+      </div>
+
+      <p><strong>Commenté le {{avis.dateAvis | date:'fullDate'}}</strong>  </p>
+      <!-- <p class="d-flex justify-content-start fw-bold">Rating: {{avis.etoile}}</p> -->
+      <p class="card-text">Message: {{avis.message}}.</p>
+
+    </div>
+  </div></div>
+ </div>
+</div>
+
+
+
+
