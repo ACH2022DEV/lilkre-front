@@ -36,7 +36,16 @@ public Total:any='TOTAL';
 public Acem:any='Acem';
 public Poste:any='Poste';
 
-
+powers = [
+  {value:'Appartements/studios'},
+  {value:'Etage de villa'},
+{value:'Villas/maisons'},
+{value:'Location étudiant'},
+{value:'Location meublée long durée'},
+{value:'Location De Vacances'},
+{value:'Bureaux'},
+{value:'Autre immobilier'},
+];
 
 public remise:any=30;
 public lenght:any;

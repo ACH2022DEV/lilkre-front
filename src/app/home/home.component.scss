@@ -1,5 +1,23 @@
 
+.form-select:focus {
+  border-color: #342c70 !important;
+  box-shadow: none;
+  border-width: 3px;
+}
 
+.form-select:focus:not(:focus-visible) {
+  border-color: #342c70 !important;
+  box-shadow: none !important;
+}
+.form-select {
+  border-color: #000000 !important;
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+  border-width: 2px;
+}
+.background {
+  background-image: url('../../assets/images/bg-dar.avif');
+  height: 550px;
+}
 
 a{
     text-decoration: none;
