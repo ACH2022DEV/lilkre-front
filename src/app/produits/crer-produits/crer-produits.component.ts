@@ -9,6 +9,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatButton } from '@angular/material/button';
 import { Icon } from '@fortawesome/fontawesome-svg-core';
 import { MatIcon } from '@angular/material/icon';
+import { CategorieService } from 'src/app/categorie/categorie.service';
+import { ProduitService } from '../produit.service';
 
 @Component({
   selector: 'app-crer-produits',
@@ -26,11 +28,11 @@ export class CrerProduitsComponent implements OnInit {
 
    public fileList : FileList[] | undefined
    public formData2=new FormData();
-
+   selected = 'option2';
    quantite:any;
    floa_error:boolean=false;
-  constructor(private produitService: DatabaseService,private router: Router,private sanitiser:DomSanitizer,
-    private _snackBar: MatSnackBar) { }
+  constructor(private produitService: ProduitService,private router: Router,private sanitiser:DomSanitizer,
+    private _snackBar: MatSnackBar,private categorieService:CategorieService) { }
     openSnackBar(message: string, action: string, type: 'error' | 'success') {
       this._snackBar.open(message, action, {
         duration: 5000,
@@ -39,6 +41,7 @@ export class CrerProduitsComponent implements OnInit {
     }
   AllImages: any[] = [];
   ngOnInit(): void {
+    this.getAllCategories();
   }
 
   validateQuantite(value: number): void {
@@ -54,11 +57,21 @@ export class CrerProduitsComponent implements OnInit {
     this.elements.push('test');
   }
 
-
+  selectedCategory:any;
   public addProduit(f: any) {
-
     let data = f.value;
-    console.log('data', data)
+let Article_Data: any={
+  categorie:{
+    id: data.categorie,
+  },
+  description:data.description,
+  paysOrigine:data.paysOrigine,
+  prix:data.prix,
+  quantite:data.quantite,
+  remise:data.remise,
+  tva:data.tva
+};
+    console.log('Article_Data', Article_Data)
     console.log('this is AllImages', this.AllImages.length)
     if(this.AllImages.length>0){
  for (let i = 0; i < this.AllImages.length; i++) {
@@ -66,7 +79,7 @@ export class CrerProduitsComponent implements OnInit {
       this.formData2.append('files',this.userfile);
       console.log( 'this.formData2',this.formData2)
     }
-    const productFormdata=this.prepareFormdata(data);
+    const productFormdata=this.prepareFormdata(Article_Data);
     console.log('this is productFormdata', productFormdata)
     this.produitService.addarticle(productFormdata).subscribe(
       data => {
@@ -82,7 +95,7 @@ export class CrerProduitsComponent implements OnInit {
     }
 
   }
-  prepareFormdata(article:Article):FormData{
+  prepareFormdata(article:any):FormData{
    this.formData2.append('article',new Blob([JSON.stringify(article)],{type:'application/json'}));
     return this.formData2;
   }
@@ -127,6 +140,14 @@ if(fileNameExists){
     reader.readAsDataURL(selectedFile);
 }
 
+  }
+  //ajouter la méthode get catégorie
+  Allcategorie:any=[];
+  getAllCategories(){
+    this.categorieService.getAllCategorie(0,100).subscribe((data:any)=>{
+      console.log('data'+JSON.stringify(data) );
+      this.Allcategorie=data['content'];
+    })
   }
 
       }

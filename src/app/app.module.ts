@@ -10,7 +10,6 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
 import { ShareButtonModule } from 'ngx-sharebuttons/button';
 import { ShareModule } from 'ngx-sharebuttons';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
-
 // pour l'etoile
 import { ReactiveFormsModule } from '@angular/forms';
 // search module
@@ -94,6 +93,15 @@ import { VisualiserPersonneComponent } from './personne/visualiser-personne/visu
 import { ListePersonneComponent } from './personne/liste-personne/liste-personne.component';
 import { EditerPersonneComponent } from './personne/editer-personne/editer-personne.component';
 import { CrerPersonneComponent } from './personne/crer-personne/crer-personne.component';
+import { CrerCategorieComponent } from './categorie/crer-categorie/crer-categorie.component';
+import { EditCategorieComponent } from './categorie/edit-categorie/edit-categorie.component';
+import { ListeCategorieComponent } from './categorie/liste-categorie/liste-categorie.component';
+import { EditGouvernoratComponent } from './gouvernorat/edit-gouvernorat/edit-gouvernorat.component';
+import { ListGouvernoratComponent } from './gouvernorat/list-gouvernorat/list-gouvernorat.component';
+import { ListCommuneComponent } from './commune/list-commune/list-commune.component';
+import { CrerCommuneComponent } from './commune/crer-commune/crer-commune.component';
+import { EditCommuneComponent } from './commune/edit-commune/edit-commune.component';
+import { CrerGouvernoratComponent } from './gouvernorat/crer-gouvernorat/crer-gouvernorat.component';
 
 @NgModule({
   declarations: [
@@ -133,6 +141,15 @@ import { CrerPersonneComponent } from './personne/crer-personne/crer-personne.co
     ListeEnviesComponent,
     ParametresCompteComponent,
     VotreCompteComponent,
+    CrerCategorieComponent,
+    EditCategorieComponent,
+    ListeCategorieComponent,
+    EditGouvernoratComponent,
+    ListGouvernoratComponent,
+    ListCommuneComponent,
+    CrerCommuneComponent,
+    EditCommuneComponent,
+    CrerGouvernoratComponent,
   ],
   imports: [
     BrowserModule,
@@ -147,6 +164,7 @@ import { CrerPersonneComponent } from './personne/crer-personne/crer-personne.co
     FormsModule,
     RouterModule,
     MatIconModule,
+    MatFormFieldModule,
     MatDialogModule,
     HttpClientModule,
     NgxPaginationModule,

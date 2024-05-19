@@ -1,0 +1,69 @@
+.search-hero {
+  max-width: 500px;
+  margin:auto;
+}
+
+
+.form-control::placeholder  {
+  font-family: FontAwesome;
+}
+a.active{
+  background-color: rgb(255, 255, 255);
+  color: rgb(5, 4, 4);
+}
+
+
+
+
+
+.page-link{
+  text-decoration: none;
+  color: rgb(253, 251, 251);
+  background-color: #f68b1e;
+  margin: 3px;
+ cursor: pointer;
+}
+.color{
+background-color: #f68b1e;
+}
+
+.StyleButton{
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+   //background-color: #f68b1e;
+   background-color: #151413;
+    color: #fff;
+    height: 60px;
+    width: 60px;
+  }
+
+  button[disabled]{
+    cursor: none;
+  }
+  button[disabled]:hover{
+    background-color: gray;
+    cursor: none;
+  }
+
+  .btnColor{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    background-color: #f68b1e;
+    height: 40px;
+
+  }
+
+
+  .form-control:focus {
+  border-color: #342c70 !important;
+  box-shadow: none;
+  border-width: 2px;
+  }
+
+  .form-control:focus:not(:focus-visible) {
+  border-color: #ced4da !important;
+  box-shadow: none !important;
+  }
+  .form-control {
+  border-color: #000000 !important;
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+  }
+

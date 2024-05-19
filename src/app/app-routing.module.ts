@@ -27,6 +27,14 @@ import { EditerPersonneComponent } from './personne/editer-personne/editer-perso
 import { VisualiserPersonneComponent } from './personne/visualiser-personne/visualiser-personne.component';
 import { SearchPersonneComponent } from './personne/search-personne/search-personne.component';
 import { ListePersonneComponent } from './personne/liste-personne/liste-personne.component';
+import { ListGouvernoratComponent } from './gouvernorat/list-gouvernorat/list-gouvernorat.component';
+import { EditGouvernoratComponent } from './gouvernorat/edit-gouvernorat/edit-gouvernorat.component';
+import { ListCommuneComponent } from './commune/list-commune/list-commune.component';
+import { CrerCommuneComponent } from './commune/crer-commune/crer-commune.component';
+import { EditCommuneComponent } from './commune/edit-commune/edit-commune.component';
+import { ListeCategorieComponent } from './categorie/liste-categorie/liste-categorie.component';
+import { CrerCategorieComponent } from './categorie/crer-categorie/crer-categorie.component';
+import { EditCategorieComponent } from './categorie/edit-categorie/edit-categorie.component';
 
 const routes: Routes = [{ path: 'list-personne', component: ListePersonneComponent, canActivate: [GuardService] },
 { path: 'searchPersonne/:searchPersonne', component: SearchPersonneComponent, canActivate: [GuardService] },
@@ -51,6 +59,14 @@ const routes: Routes = [{ path: 'list-personne', component: ListePersonneCompone
 { path: 'searchProduct/:searchText', component: SearchResultsComponent },
 { path: 'failed', component: FailedPaymentComponent },
 { path: 'success', component: SuccessPaymentComponent },
+{ path: 'Gouvernorat', component: ListGouvernoratComponent , canActivate: [GuardService]},
+{ path: 'editer-Gouvernorat', component: EditGouvernoratComponent , canActivate: [GuardService]},
+{ path: 'Commune', component: ListCommuneComponent , canActivate: [GuardService]},
+{ path: 'crer-Commune', component: CrerCommuneComponent , canActivate: [GuardService]},
+{ path: 'editer-Commune', component: EditCommuneComponent, canActivate: [GuardService] },
+{ path: 'Categorie', component: ListeCategorieComponent , canActivate: [GuardService]},
+{ path: 'crer-Categorie', component: CrerCategorieComponent, canActivate: [GuardService] },
+{ path: 'editer-Categorie', component: EditCategorieComponent, canActivate: [GuardService] },
 //just pour le test
 { path: 'callback', component: callbackPageComponent},
  { path: 'CustomerAccount', component: ParametresCompteComponent },

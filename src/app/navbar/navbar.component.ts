@@ -44,7 +44,7 @@ public ID:any;
   constructor(private elementRef: ElementRef,private personne: DatabaseService,private search:SearchService, private sanitizer: DomSanitizer,private route: ActivatedRoute,
     private contactService:ContactService,private router: Router, private panierService: PanierService) {
 
-    this.getAllContact();
+   // this.getAllContact();
    // this.nombredeprod;
     this.nombreContact;
 

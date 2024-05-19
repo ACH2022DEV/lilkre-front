@@ -130,7 +130,7 @@
       </svg></button>
   </div>
     <label for="fileInput{{index}}" class="w-100" style="height: 200px;">
-      <img  [src]="selectedImages[index] || '../../../assets/images/img/uploadimage.png'"
+      <img  [src]="selectedImages[index] || '../../../assets/images/uploadimage.png'"
        alt="Sélectionner une image" class="rounded-2  bg-white shadow-sm p-1" width="100%" height="100%" style="cursor: pointer;">
     </label>
     <input class="w-100" id="fileInput{{index}}" ngModel type="file" (change)="onImageSelected($event, index)" accept="image/*" style="display: none;">

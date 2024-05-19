@@ -1,0 +1,61 @@
+<!-- Modal Header -->
+<div class="modal-header  bg-info px-0">
+  <h1 class="modal-title text-center fw-semibold text-white mt-0 ms-4 " id="imageModalLabel">Modifier Commune </h1>
+  <!-- Autres titres selon votre logique -->
+  <button class="btn border-0" mat-icon-button mat-dialog-close aria-label="Close">
+    <mat-icon class="text-white">close</mat-icon>
+  </button>
+</div>
+
+<!-- Modal Content -->
+<mat-dialog-content class="p-0">
+  <div class="rounded-3 "style="width: 600px;">
+    <!-- Logique conditionnelle pour afficher le bon contenu -->
+    <div class="modal-dialog modal-lg ">
+      <div class="modal-content border-0" id="imageModal" >
+        <!-- Contenu de la modal selon votre logique -->
+        <div class="modal-body py-0">
+          <!-- Champ de description -->
+
+
+
+         <form #CommuneForm="ngForm" (ngSubmit)="modifierCommune(CommuneForm)" class="p-1 w-100 mt-1">
+            <div class="form-group">
+              <div class="form-floating mb-1">
+                <input class="form-control" required id="floatingDescription" name="nom" placeholder="Nom"
+                 [(ngModel)]="commune.communeNom">
+                <label for="floatingDescription">Nom</label>
+              </div>
+            <!--   <div class="form-group">
+                <select name="gouvernoratId" class="form-control" id="gouvernoratId"  formControlName="gouvernoratId">
+                  <option *ngFor="let gouvernorat of gouvernorats"  [value]="gouvernorat.id">{{ gouvernorat.nom }}</option>
+                </select>
+              </div> -->
+              <mat-form-field appearance="fill" class="w-100 mt-2">
+                <mat-label>Gouvernorat</mat-label>
+                <mat-select name="gouvernoratId" id="gouvernoratId" [(ngModel)]="commune.gouvernoratId" required>
+                  <mat-option *ngFor="let gouvernorat of gouvernorats" [value]="gouvernorat.id">
+                    {{ gouvernorat.nom }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="d-flex justify-content-end mt-2">
+              <button type="button" (click)="closeDialog(false)" class="btn btn-secondary rounded-3 shadow-sm mx-1">Retour</button>
+              <button class="btn btn-info rounded-3 shadow-sm" type="submit" [disabled]="CommuneForm.invalid">Modifier</button>
+            </div>
+          </form>
+          <!-- Button trigger modal -->
+
+
+
+          <!-- Reste du contenu de votre modal -->
+        </div>
+      </div>
+      <!-- Autres parties de la modal selon votre logique -->
+    </div>
+  </div>
+</mat-dialog-content>
+
+
+<!-- Modal -->

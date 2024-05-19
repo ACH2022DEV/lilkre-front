@@ -69,29 +69,7 @@ public addoffer(offer:any): Observable<any> {
     return this.http.delete<void>(`${this.url}/details/${id}`);
 
   }
-  //les api d'aticles
-  public getAllArticles(pageNo:number,size:number): Observable<Article[]> {
-    return this.http.get<Article[]>(`${this.url}/article?page=${pageNo}&size=${size}`);
 
-  }
-  public getarticle(id: number): Observable<Article> {
-
-    return this.http.get<Article>(`${this.url}/article/${id}`);
-
-  }
-  public addarticle(articl: FormData): Observable<FormData> {
-    return this.http.post<FormData>(`${this.url}/article`, articl);
-
-  }
-
-  public Updatearticle( articl: FormData): Observable<FormData> {
-    return this.http.put<FormData>(`${this.url}/article`, articl);
-
-  }
-  public deletearticle(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.url}/article/${id}`);
-
-  }
   ///les apis des factures
   public getAllfactures(pageNo:number=0,size:number=2): Observable<Facture[]> {
     return this.http.get<Facture[]>(`${this.url}/facture?page=${pageNo}&size=${size}`);
