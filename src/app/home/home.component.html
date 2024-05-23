@@ -6,38 +6,46 @@
   <div class="d-flex justify-content-center align-items-center mb-5">
     <h1 class="text-white " style="font-size: 5em;">L'appartement Parfait
     En deux clics</h1></div>
-  <div class=" rounded-2 d-flex justify-content-between p-1" style="background-color: black;">
+  <div class=" rounded-2 d-flex justify-content-between p-1" style="background-color: rgb(0, 0, 0);">
 <div class="col-md-3  mx-0">
   <div class="form-group my-2">
     <label class="fw-semibold ms-2 text-white">TYPE DE BIEN </label>
-    <select class="form-select form-select-lg  rounded-1  " required
-      name="role" ngModel #role="ngModel" aria-label=".form-select-lg example">
-      <option value="" class="text-center">Tous</option>
-  <option class="text-center" *ngFor="let pow of powers" value="{{pow.value}}">{{pow.value}}</option>
-
-</select>
+    <mat-form-field appearance="fill" class="w-100 mt-2">
+      <mat-label>TYPE DE BIEN </mat-label>
+      <mat-select name="categorieId" id="categorieId" [(ngModel)]="categorieId" required>
+        <!-- <mat-option [value]="null">Tous</mat-option> -->
+        <mat-option *ngFor="let categorie of categories" [value]="categorie.id">
+          {{ categorie.nom }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
     </div>
 </div>
 <div class="col-md-3">
   <div class="form-group my-2">
     <label class="fw-semibold ms-2 text-white">GOUVERNORATS</label>
-    <select class="form-select form-select-lg  rounded-1  " required
-      name="role" ngModel #role="ngModel" aria-label=".form-select-lg example">
-      <option value="" class="text-center">Tous</option>
-  <option class="text-center" *ngFor="let pow of powers" value="{{pow.value}}">{{pow.value}}</option>
-
-</select>
+    <mat-form-field appearance="fill" class="w-100 mt-2">
+      <mat-label>Gouvernorat</mat-label>
+      <mat-select name="gouvernoratId" id="gouvernoratId" [(ngModel)]="gouvernoratId" required>
+        <mat-option *ngFor="let gouvernorat of gouvernorats" [value]="gouvernorat.id">
+          {{ gouvernorat.nom }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
     </div>
 </div>
 <div class="col-md-3">
   <div class="form-group my-2">
     <label class="fw-semibold ms-2 text-white">DÉLEGATIONS</label>
-    <select class="form-select form-select-lg  rounded-1  " required
-      name="role" ngModel #role="ngModel" aria-label=".form-select-lg example">
-      <option value="" class="text-center">Tous</option>
-  <option class="text-center" *ngFor="let pow of powers" value="{{pow.value}}">{{pow.value}}</option>
-
-</select>
+    <mat-form-field appearance="fill" class="w-100 mt-2">
+      <mat-label>DÉLEGATIONS</mat-label>
+      <mat-select name="communeId" id="communeId" [(ngModel)]="communeId" required>
+        <!-- <mat-option [value]="0">Tous</mat-option> -->
+        <mat-option *ngFor="let commune of communes" [value]="commune.id">
+          {{ commune.nom }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
     </div>
 </div>
 

@@ -7,8 +7,13 @@
    // box-sizing: border-box;
 
 }
+
+.toggleButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #e9e9e9;
+}
 .nav-item{
-  text-shadow: 1px 1px 1px #bdb9b9;
+  text-shadow: 1px 1px 1px #ffffff;
 }
 .navbar-expand-lg .navbar-nav .nav-item .nav-link.active-link{
    /*  color: rgb(255, 255, 255);

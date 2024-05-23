@@ -6,6 +6,7 @@ import { DatabaseService } from '../services/database.service';
 import { CreatePanier } from '../models/createPanier';
 import { FavorisService } from '../favoris.service';
 import { PanierService } from '../panier.service';
+import { ProduitService } from '../produits/produit.service';
 
 @Component({
   selector: 'app-liste-envies',
@@ -14,7 +15,7 @@ import { PanierService } from '../panier.service';
 })
 export class ListeEnviesComponent implements OnInit {
 
-  constructor( private sanitizer: DomSanitizer,private service:DatabaseService,private panierService:PanierService,
+  constructor( private sanitizer: DomSanitizer,private service:ProduitService,private panierService:PanierService,
     private favorisService:FavorisService
   ) { }
 

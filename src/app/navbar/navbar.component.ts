@@ -14,7 +14,7 @@ import { DatabaseService } from '../services/database.service';
 import { imageBase64 } from 'src/assets/imageEnBase64';
 import { ContactService } from '../contact.service';
 import { PanierService } from '../panier.service';
-
+import { EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -49,6 +49,20 @@ public ID:any;
     this.nombreContact;
 
   }
+//code de sidebar menu
+isSidebarOpen = false;
+
+@Output() sidebarToggle = new EventEmitter<boolean>();
+
+toggleSidebar() {
+  this.isSidebarOpen = !this.isSidebarOpen;
+    this.sidebarToggle.emit(this.isSidebarOpen);
+}
+//fin de code
+ open:boolean=false;
+openOffCanvas(){
+ this.open=true;
+}
 getStateOfModal(){
   const navbar = this.elementRef.nativeElement.querySelector('#navbar');
  // console.log("Navbar:", navbar);

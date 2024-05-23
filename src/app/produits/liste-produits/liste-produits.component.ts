@@ -14,6 +14,7 @@ import { SearchService } from '../search.service';
 import { imageBase64 } from 'src/assets/imageEnBase64';
 import { FavorisService } from 'src/app/favoris.service';
 import { PanierService } from 'src/app/panier.service';
+import { ProduitService } from '../produit.service';
 
 @Component({
   selector: 'app-liste-produits',
@@ -48,7 +49,7 @@ export class ListeProduitsComponent implements OnInit {
   public lenght:any;
  // public nombre1:any=1;
 //  public nombre:any;
-  constructor(private produitService: DatabaseService, private sanitizer: DomSanitizer, private panierService: PanierService,
+  constructor(private produitService: ProduitService, private sanitizer: DomSanitizer, private panierService: PanierService,
     private fb: FormBuilder, private avisClient: AvisService,private search:SearchService,private route: ActivatedRoute
     ,private router: Router,private favorisService:FavorisService) {
 

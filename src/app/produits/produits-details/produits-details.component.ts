@@ -15,6 +15,7 @@ import { ImageModalComponent } from '../liste-produits/image-modal/image-modal.c
 import { imageBase64 } from 'src/assets/imageEnBase64';
 import { Observable } from 'rxjs';
 import { PanierService } from 'src/app/panier.service';
+import { ProduitService } from '../produit.service';
 
 @Component({
   selector: 'app-produits-details',
@@ -46,7 +47,7 @@ public code:any;
 public quantity:number=1;
 public Commentaire:boolean=true;
 urlPartage:string=""
-constructor( private elementRef: ElementRef,private panierService: PanierService,private produitService: DatabaseService, private route: ActivatedRoute, private sanitizer: DomSanitizer,
+constructor( private elementRef: ElementRef,private panierService: PanierService,private produitService: ProduitService, private route: ActivatedRoute, private sanitizer: DomSanitizer,
     private router: Router, private avisService: AvisService, private fb: FormBuilder,public dialog: MatDialog) {
     this.getAllAvis();
     this.nombreCommentaire;

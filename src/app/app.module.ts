@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 //import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { MatIconModule } from '@angular/material/icon';
 
@@ -102,6 +103,7 @@ import { ListCommuneComponent } from './commune/list-commune/list-commune.compon
 import { CrerCommuneComponent } from './commune/crer-commune/crer-commune.component';
 import { EditCommuneComponent } from './commune/edit-commune/edit-commune.component';
 import { CrerGouvernoratComponent } from './gouvernorat/crer-gouvernorat/crer-gouvernorat.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -150,6 +152,8 @@ import { CrerGouvernoratComponent } from './gouvernorat/crer-gouvernorat/crer-go
     CrerCommuneComponent,
     EditCommuneComponent,
     CrerGouvernoratComponent,
+    SidebarComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -183,6 +187,7 @@ import { CrerGouvernoratComponent } from './gouvernorat/crer-gouvernorat/crer-go
    ShareButtonModule,
    MatListModule,
    MatSnackBarModule,
+   MatSidenavModule,
     ShareButtonsModule.withConfig({
       debug: true,
     }),

@@ -1,0 +1,33 @@
+/* app.component.css */
+
+.content-wrapper {
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.sidebar {
+  width: 250px; /* Ajustez cette valeur en fonction de la largeur de votre sidebar */
+ 
+  transition: width 0.3s ease;
+}
+
+.main-content {
+  flex: 1;
+  transition: flex-basis 0.3s ease;
+}
+
+.sidebar-open .sidebar {
+  width: 250px;
+}
+
+.sidebar-open .main-content {
+  flex-basis: calc(100% - 250px);
+}
+
+.sidebar-closed .sidebar {
+  width: 0;
+}
+
+.sidebar-closed .main-content {
+  flex-basis: 100%;
+}

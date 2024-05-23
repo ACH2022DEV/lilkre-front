@@ -1,0 +1,71 @@
+/* sidebar.component.css */
+.sidebar-content {
+  position: fixed; /* Fixe la position de la barre latérale */
+
+width: 250px;
+  height: 630px;
+  color: #fff;
+  background-color: rgb(80, 80, 80);
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-container {
+  height: calc(100% - 200px); /* Ajuster en fonction de l'espace nécessaire pour le header et autres contenus fixes */
+  overflow-y: auto; /* Permet le défilement vertical */
+  margin-top: 20px; /* Optionnel : ajoute un espace en haut */
+}
+a
+{
+  text-decoration: none;
+  color: #000000;
+  padding: 10px;
+  display: flex;
+  align-content: center;
+  font-weight: 400;
+  font-size: large;
+
+
+}
+.nav-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+li{
+  height: 50px;
+  width: 95%;
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+}
+li:hover {
+  background-color: rgb(0, 0, 0);
+  a{
+    color: #ffffff;
+  }
+}
+
+hr
+{
+  height: 10px;
+  border-top: 2px solid #ffffff;
+}
+.nav-container::-webkit-scrollbar {
+  height: 4px;
+  width: 8px;
+
+  /* Hauteur de la barre de défilement */
+}
+/* Poignée de défilement */
+.nav-container::-webkit-scrollbar-thumb {
+  background-color: #ffffff; /* Couleur de la poignée */
+  border-radius: 8px; /* Bord arrondi */
+}
+
+/* Barre de défilement au survol */
+.nav-container::-webkit-scrollbar-thumb:hover {
+  background-color: #888888; /* Couleur de la poignée au survol */
+}

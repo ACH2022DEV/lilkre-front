@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Article } from 'src/app/models/article';
 import { FileHandle } from 'src/app/models/file';
 import { DatabaseService } from 'src/app/services/database.service';
+import { ProduitService } from '../produit.service';
 
 @Component({
   selector: 'app-editer-produits',
@@ -22,7 +23,7 @@ export class EditerProduitsComponent implements OnInit {
  public produit2:FormData | undefined;
 
   floa_error:boolean=false;
-  constructor(private produitService: DatabaseService,
+  constructor(private produitService: ProduitService,
     private route: ActivatedRoute,private _snackBar: MatSnackBar,
     private router: Router) { }
     openSnackBar(message: string, action: string, type: 'error' | 'success') {

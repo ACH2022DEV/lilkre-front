@@ -5,6 +5,7 @@ import { Article } from 'src/app/models/article';
 import { Picture } from 'src/app/models/mesImages';
 import { DatabaseService } from 'src/app/services/database.service';
 import { imageBase64 } from 'src/assets/imageEnBase64';
+import { ProduitService } from '../produit.service';
 
 @Component({
   selector: 'app-visualiser-produits',
@@ -17,7 +18,7 @@ export class VisualiserProduitsComponent implements OnInit {
 
 
   //
-  constructor(private produitService: DatabaseService, private route: ActivatedRoute, private sanitizer: DomSanitizer,
+  constructor(private produitService: ProduitService, private route: ActivatedRoute, private sanitizer: DomSanitizer,
     private router: Router) { }
 
   ngOnInit(): void {

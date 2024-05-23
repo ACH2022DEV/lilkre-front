@@ -4,15 +4,27 @@ import { DatabaseService } from './services/database.service';
 import { Router } from '@angular/router';
 import {  NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { ProduitService } from './produits/produit.service';
+import { trigger, state, style, transition, animate } from '@angular/animations';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    trigger('sidebarToggle', [
+      state('closed', style({ left: '-250px' })),
+      state('open', style({ left: '0' })),
+      transition('closed => open', [animate('0.3s ease')]),
+      transition('open => closed', [animate('0.3s ease')])
+    ])
+  ]
 })
 export class AppComponent {
+  //showFiller = false;
   title = 'lilkre';
   public produit: any = { codeArticle: '' };
-  constructor( private titleService: Title,private produitService: DatabaseService,
+  constructor( private titleService: Title,private produitService: ProduitService,
     private metaService: Meta,
     private router: Router) {
     //translate.setDefaultLang('fr');
@@ -93,5 +105,10 @@ getMetaDescriptionForCurrentRoute(): string {
     }
 
     return description;
+}
+//ajouter la méthode de sidebar
+ isSidebarOpen = false;
+ handleSidebarToggle(event: boolean) {
+  this.isSidebarOpen = event;
 }
 }

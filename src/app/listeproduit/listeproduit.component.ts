@@ -5,6 +5,7 @@ import { Article } from '../models/article';
 import { Picture } from '../models/mesImages';
 import { DatabaseService } from '../services/database.service';
 import { imageBase64 } from 'src/assets/imageEnBase64';
+import { ProduitService } from '../produits/produit.service';
 
 @Component({
   selector: 'app-listeproduit',
@@ -24,7 +25,7 @@ export class ListeproduitComponent implements OnInit {
  cancelClicked = false;
  displayedPages: number[] = []; // Pages à afficher dans la pagination
  //
-  constructor(private produitService: DatabaseService, private sanitizer: DomSanitizer) { }
+  constructor(private produitService: ProduitService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.getAllProduits();

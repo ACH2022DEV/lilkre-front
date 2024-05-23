@@ -5,6 +5,7 @@ import { Article } from 'src/app/models/article';
 import { Picture } from 'src/app/models/mesImages';
 import { SearchService } from 'src/app/produits/search.service';
 import { DatabaseService } from 'src/app/services/database.service';
+import { ProduitService } from '../produits/produit.service';
 
 @Component({
   selector: 'app-search-admin-art',
@@ -17,14 +18,15 @@ export class SearchAdminArtComponent implements OnInit {
   public size=8;
   public page=0;
   public total: Array<number> | undefined;
-   //pop up 
+   //pop up
  public popoverTitle :string= 'Confirmation';
  public popoverMessage :string= 'Are you sure?';
  confirmClicked = false;
  cancelClicked = false;
  //
 
-  constructor(private route: ActivatedRoute, private router: Router, private sanitizer: DomSanitizer,private searchservice:SearchService,private produitService: DatabaseService) { }
+  constructor(private route: ActivatedRoute, private router: Router,
+    private sanitizer: DomSanitizer,private searchservice:SearchService,private produitService: ProduitService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params=>{
@@ -39,12 +41,12 @@ export class SearchAdminArtComponent implements OnInit {
 
     }
     public deletePRODUIT(id:number):void{
-      this.produitService.deletearticle(id).subscribe(data=>{
+      this.produitService.deletearticle(id).subscribe((data:any)=>{
         this.searchservice.Search(this.page,this.size, this.searchText).subscribe((data:any)=> {
           this.results = data['content'];
-      
+
       }) })
-       
+
     }
     convertBase64ToImage(images: Picture[]): any {
 
@@ -53,13 +55,13 @@ export class SearchAdminArtComponent implements OnInit {
         base64 = "data:image/png;base64, " + images[0].picbyte;
       }
       return this.sanitizer.bypassSecurityTrustUrl(base64);
-    
-    }  
+
+    }
 
     setPage(i: number,event:any){
       this.page = i;
       this.searchservice.Search(this.page,this.size, this.searchText).subscribe((data:any)=> {
         this.results = data['content'];
-      
+
   })
   }}
